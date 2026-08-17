@@ -1,0 +1,4046 @@
+[
+  {
+    "id": "69bd1d9289305324",
+    "type": "tab",
+    "label": "Lights",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "fb0e479bed3bd990",
+    "type": "comment",
+    "z": "69bd1d9289305324",
+    "name": "Laundry Light",
+    "info": "",
+    "x": 110,
+    "y": 60,
+    "wires": []
+  },
+  {
+    "id": "ba08dd206c39fd60",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "Upstairs Motion On",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "binary_sensor.landing_motion_combined"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "string",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 1000,
+    "wires": [
+      [
+        "f63f6bee51bb7e97",
+        "43b4af7417cd5a17"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "4f89c4d394c5dc2b",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "Stairs Motion On",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "binary_sensor.stairs_motion_occupancy"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 120,
+    "y": 760,
+    "wires": [
+      [
+        "6d34b623d84da1cc",
+        "93a4c15920ffe4d0"
+      ],
+      [
+        "8dad8352eac0c612",
+        "522425ee6f927611"
+      ]
+    ]
+  },
+  {
+    "id": "8dad8352eac0c612",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "nobody upstairs?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "binary_sensor.upstairs_sensor_occupancy",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 350,
+    "y": 880,
+    "wires": [
+      [],
+      [
+        "a5a94332226b6487"
+      ]
+    ]
+  },
+  {
+    "id": "024f50ba617fcca5",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "nobody on stairs?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "binary_sensor.stairs_motion_occupancy",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 430,
+    "y": 1160,
+    "wires": [
+      [],
+      [
+        "e085e1f3d7d9321f"
+      ]
+    ]
+  },
+  {
+    "id": "f63f6bee51bb7e97",
+    "type": "time-of-day",
+    "z": "69bd1d9289305324",
+    "name": "After 11pm",
+    "startTime": "23:00:00",
+    "endTime": "06:54:00",
+    "outputs": 2,
+    "x": 930,
+    "y": 940,
+    "wires": [
+      [
+        "49055abedd8f43f9"
+      ],
+      [
+        "e792ad7ec08a6365"
+      ]
+    ]
+  },
+  {
+    "id": "6d34b623d84da1cc",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "stairs light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "80",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.stairs_light",
+        "type": "str"
+      },
+      {
+        "name": "transition",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.stairslightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 340,
+    "y": 720,
+    "wires": []
+  },
+  {
+    "id": "538a764c65f4f678",
+    "type": "comment",
+    "z": "69bd1d9289305324",
+    "name": "Lounge Lights",
+    "info": "",
+    "x": 130,
+    "y": 1220,
+    "wires": []
+  },
+  {
+    "id": "74bedbea75d1ea10",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Wii?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "WII",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.tv_source",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 150,
+    "y": 1280,
+    "wires": [
+      [],
+      [
+        "fdfea1b54e29fefc"
+      ]
+    ]
+  },
+  {
+    "id": "fdfea1b54e29fefc",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "whatsapp?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.whatsapp_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 289.4513854980469,
+    "y": 1280,
+    "wires": [
+      [],
+      [
+        "b93040c02f93ab5e"
+      ]
+    ]
+  },
+  {
+    "id": "b93040c02f93ab5e",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "reading?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.reading_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 440,
+    "y": 1280,
+    "wires": [
+      [],
+      [
+        "cf391d3887de39f6"
+      ]
+    ]
+  },
+  {
+    "id": "733ebaa1883876cb",
+    "type": "link in",
+    "z": "69bd1d9289305324",
+    "name": "link in 1",
+    "links": [
+      "2a67618a45f3338f",
+      "6312d592f2881d3b",
+      "d391f99c0ee88cfa"
+    ],
+    "x": 55,
+    "y": 1280,
+    "wires": [
+      [
+        "74bedbea75d1ea10"
+      ]
+    ]
+  },
+  {
+    "id": "2be6aa864ae84ada",
+    "type": "link in",
+    "z": "69bd1d9289305324",
+    "name": "link in 2",
+    "links": [
+      "eca414ace8ea28ac"
+    ],
+    "x": 55,
+    "y": 1340,
+    "wires": [
+      [
+        "41e8d4e5c83190c7"
+      ]
+    ]
+  },
+  {
+    "id": "c52b53db395ec51c",
+    "type": "link in",
+    "z": "69bd1d9289305324",
+    "name": "link in 3",
+    "links": [
+      "0bb4bc41c415d6ab",
+      "a820e3d468013bd3",
+      "e3b08852f40167cb"
+    ],
+    "x": 55,
+    "y": 1400,
+    "wires": [
+      [
+        "ca6183966f32945f"
+      ]
+    ]
+  },
+  {
+    "id": "cf289ec39df609e3",
+    "type": "link in",
+    "z": "69bd1d9289305324",
+    "name": "link in 4",
+    "links": [
+      "bdeeb9acc618d84c"
+    ],
+    "x": 55,
+    "y": 1480,
+    "wires": [
+      [
+        "3ecae55af9af742a"
+      ]
+    ]
+  },
+  {
+    "id": "cf391d3887de39f6",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "lounge light 25",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "25",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.lounge_light",
+        "type": "str"
+      },
+      {
+        "name": "transition",
+        "value": "4",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.loungelightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 780,
+    "y": 1280,
+    "wires": []
+  },
+  {
+    "id": "41e8d4e5c83190c7",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "lounge light 70",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "70",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.lounge_light",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "3500",
+        "type": "num"
+      },
+      {
+        "name": "transition",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.loungelightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 180,
+    "y": 1340,
+    "wires": []
+  },
+  {
+    "id": "ca6183966f32945f",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "lounge light 60",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "60",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.lounge_light",
+        "type": "str"
+      },
+      {
+        "name": "transition",
+        "value": "5",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.loungelightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 180,
+    "y": 1400,
+    "wires": []
+  },
+  {
+    "id": "75d3dcb9e3eb4f3f",
+    "type": "comment",
+    "z": "69bd1d9289305324",
+    "name": "Stairs/Landing Light",
+    "info": "",
+    "x": 130,
+    "y": 520,
+    "wires": []
+  },
+  {
+    "id": "4396aeefdf2abce0",
+    "type": "comment",
+    "z": "69bd1d9289305324",
+    "name": "Reset Room Lights",
+    "info": "",
+    "x": 130,
+    "y": 1780,
+    "wires": []
+  },
+  {
+    "id": "bf2ecb14abb5b08c",
+    "type": "link in",
+    "z": "69bd1d9289305324",
+    "name": "link in 5",
+    "links": [
+      "a254ed6de375b68a",
+      "5bbcb42620d583f7"
+    ],
+    "x": 55,
+    "y": 1840,
+    "wires": [
+      [
+        "5a5265adb45696e2"
+      ]
+    ]
+  },
+  {
+    "id": "5a5265adb45696e2",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "whatsapp?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.whatsapp_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 190,
+    "y": 1840,
+    "wires": [
+      [],
+      [
+        "49b0bf23f66a7b8c"
+      ]
+    ]
+  },
+  {
+    "id": "49b0bf23f66a7b8c",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "reading?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.reading_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 340,
+    "y": 1840,
+    "wires": [
+      [],
+      [
+        "96b00d827d3b431b"
+      ]
+    ]
+  },
+  {
+    "id": "96b00d827d3b431b",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Chill?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.lounge_chill_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 470,
+    "y": 1840,
+    "wires": [
+      [],
+      [
+        "b4b09d45c0b48f5a"
+      ]
+    ]
+  },
+  {
+    "id": "b4b09d45c0b48f5a",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Wii Scene",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.wii_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 600,
+    "y": 1840,
+    "wires": [
+      [],
+      [
+        "e19bd35779b0fe1d"
+      ]
+    ]
+  },
+  {
+    "id": "e19bd35779b0fe1d",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Movie Scene",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.movie_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 750,
+    "y": 1840,
+    "wires": [
+      [],
+      [
+        "b3b3733acc6f6128"
+      ]
+    ]
+  },
+  {
+    "id": "eca414ace8ea28ac",
+    "type": "link out",
+    "z": "69bd1d9289305324",
+    "name": "link out 15",
+    "mode": "link",
+    "links": [
+      "2be6aa864ae84ada"
+    ],
+    "x": 1035,
+    "y": 1840,
+    "wires": []
+  },
+  {
+    "id": "86532346796be1db",
+    "type": "comment",
+    "z": "69bd1d9289305324",
+    "name": "Light 70%",
+    "info": "",
+    "x": 1120,
+    "y": 1840,
+    "wires": []
+  },
+  {
+    "id": "b3b3733acc6f6128",
+    "type": "time-of-day",
+    "z": "69bd1d9289305324",
+    "name": "midnight?",
+    "startTime": "23:59:00",
+    "endTime": "00:01:00",
+    "outputs": 2,
+    "x": 920,
+    "y": 1840,
+    "wires": [
+      [],
+      [
+        "eca414ace8ea28ac"
+      ]
+    ]
+  },
+  {
+    "id": "93a4c15920ffe4d0",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "anyone upstairs?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "binary_sensor.upstairs_sensor_occupancy",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 370,
+    "y": 760,
+    "wires": [
+      [],
+      [
+        "caf71098abbb0f4c"
+      ]
+    ]
+  },
+  {
+    "id": "caf71098abbb0f4c",
+    "type": "delay",
+    "z": "69bd1d9289305324",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "6",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 720,
+    "y": 800,
+    "wires": [
+      [
+        "f63f6bee51bb7e97"
+      ]
+    ]
+  },
+  {
+    "id": "49055abedd8f43f9",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "upstairs landing light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "5",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.upstairs_landing_bedroom",
+        "type": "str"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.landinglightlock_switch",
+        "type": "str"
+      }
+    ],
+    "x": 1140,
+    "y": 920,
+    "wires": []
+  },
+  {
+    "id": "e792ad7ec08a6365",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "upstairs landing light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "50",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.upstairs_landing_bedroom",
+        "type": "str"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.landinglightlock_switch",
+        "type": "str"
+      }
+    ],
+    "x": 1140,
+    "y": 960,
+    "wires": []
+  },
+  {
+    "id": "43b4af7417cd5a17",
+    "type": "time-of-day",
+    "z": "69bd1d9289305324",
+    "name": "After 11pm",
+    "startTime": "23:00:00",
+    "endTime": "06:54:00",
+    "outputs": 2,
+    "x": 930,
+    "y": 1000,
+    "wires": [
+      [
+        "b1498e8a7adecfd3"
+      ],
+      [
+        "df81b382117f2285"
+      ]
+    ]
+  },
+  {
+    "id": "b1498e8a7adecfd3",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "stairs light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "20",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.stairs_light",
+        "type": "str"
+      },
+      {
+        "name": "transition",
+        "value": "3",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.stairslightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 1100,
+    "y": 1000,
+    "wires": []
+  },
+  {
+    "id": "df81b382117f2285",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "stairs light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "80",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.stairs_light",
+        "type": "str"
+      },
+      {
+        "name": "transition",
+        "value": "3",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.stairslightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 1100,
+    "y": 1040,
+    "wires": []
+  },
+  {
+    "id": "d20c4b108a498bdb",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "Loo Motion",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "binary_sensor.downstairs_loo_motion_occupancy"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "20",
+    "forType": "num",
+    "forUnits": "seconds",
+    "ignorePrevStateNull": true,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 100,
+    "y": 160,
+    "wires": [
+      [
+        "d8def73a276cc06f"
+      ],
+      [
+        "8677268cc5d0f372",
+        "d8def73a276cc06f"
+      ]
+    ]
+  },
+  {
+    "id": "8677268cc5d0f372",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "light.loo_light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.loo_light",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "2050",
+        "type": "num"
+      },
+      {
+        "name": "transition",
+        "value": "0",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.loolightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 290,
+    "y": 180,
+    "wires": []
+  },
+  {
+    "id": "d8def73a276cc06f",
+    "type": "trigger",
+    "z": "69bd1d9289305324",
+    "name": "",
+    "op1": "warm",
+    "op2": "off",
+    "op1type": "str",
+    "op2type": "str",
+    "duration": "30",
+    "extend": false,
+    "overrideDelay": false,
+    "units": "s",
+    "reset": "on",
+    "bytopic": "all",
+    "topic": "topic",
+    "outputs": 2,
+    "x": 290,
+    "y": 140,
+    "wires": [
+      [
+        "47ccdce30ca2aedf"
+      ],
+      [
+        "e558e66abd7c1ccf",
+        "e4564e76e7427ad7"
+      ]
+    ]
+  },
+  {
+    "id": "47ccdce30ca2aedf",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "light.loo_light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.loo_light",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "1010",
+        "type": "num"
+      },
+      {
+        "name": "transition",
+        "value": "4",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.loolightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 470,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "27ab3d0291d06aed",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "Laundry Motion",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "binary_sensor.laundry_motion_blue2_occupancy"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "5",
+    "forType": "num",
+    "forUnits": "seconds",
+    "ignorePrevStateNull": true,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 120,
+    "y": 340,
+    "wires": [
+      [
+        "cfbceb55d9ecf557"
+      ],
+      [
+        "a71ac1159c5a585b"
+      ]
+    ]
+  },
+  {
+    "id": "a71ac1159c5a585b",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "light.laundry_light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "35",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.laundry_light",
+        "type": "str"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.laundrylightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "15000",
+        "type": "num"
+      }
+    ],
+    "x": 390,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "65af0dfb61905b7b",
+    "type": "trigger",
+    "z": "69bd1d9289305324",
+    "name": "",
+    "op1": "warm",
+    "op2": "off",
+    "op1type": "str",
+    "op2type": "str",
+    "duration": "10",
+    "extend": false,
+    "overrideDelay": false,
+    "units": "s",
+    "reset": "on",
+    "bytopic": "all",
+    "topic": "topic",
+    "outputs": 2,
+    "x": 310,
+    "y": 560,
+    "wires": [
+      [
+        "916ba7ca1c5af28e"
+      ],
+      [
+        "fd49ddb6a78c7065"
+      ]
+    ]
+  },
+  {
+    "id": "916ba7ca1c5af28e",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "lobby light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "35",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.lobby_light",
+        "type": "str"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.foyerlightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 480,
+    "y": 540,
+    "wires": []
+  },
+  {
+    "id": "881cdfdaf83aea7d",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "lobby light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "70",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.lobby_light",
+        "type": "str"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.foyerlightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 300,
+    "y": 600,
+    "wires": []
+  },
+  {
+    "id": "cb6cb864e228fc38",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "Lobby Motion On",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "binary_sensor.front_door_inside_sensor_occupancy"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "5",
+    "forType": "num",
+    "forUnits": "seconds",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 120,
+    "y": 580,
+    "wires": [
+      [
+        "65af0dfb61905b7b"
+      ],
+      [
+        "65af0dfb61905b7b",
+        "881cdfdaf83aea7d"
+      ]
+    ]
+  },
+  {
+    "id": "9207394b9db7190a",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "whatsapp?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.whatsapp_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 350,
+    "y": 2020,
+    "wires": [
+      [],
+      [
+        "fb518ab77b4b1e09"
+      ]
+    ]
+  },
+  {
+    "id": "fb518ab77b4b1e09",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "reading?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.reading_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 500,
+    "y": 2020,
+    "wires": [
+      [],
+      [
+        "908f68d891f50d94"
+      ]
+    ]
+  },
+  {
+    "id": "3a3343d481d81007",
+    "type": "api-call-service",
+    "z": "69bd1d9289305324",
+    "name": "Sound to 9",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "media_player.volume_set",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [
+      "7b06512acf7a8f0c71d7d9d2272bed8d"
+    ],
+    "entityId": [],
+    "labelId": [],
+    "data": "{\"volume_level\":\"0.225\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "media_player",
+    "service": "volume_set",
+    "x": 1070,
+    "y": 2020,
+    "wires": [
+      [
+        "dc40ed4dcdc9542a"
+      ]
+    ]
+  },
+  {
+    "id": "a55d348b65c678e6",
+    "type": "comment",
+    "z": "69bd1d9289305324",
+    "name": "Motion Detected?",
+    "info": "",
+    "x": 120,
+    "y": 1920,
+    "wires": []
+  },
+  {
+    "id": "e825257fca8332e1",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Light On?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "light.lounge_light",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 340,
+    "y": 1960,
+    "wires": [
+      [],
+      [
+        "a254ed6de375b68a"
+      ]
+    ]
+  },
+  {
+    "id": "908f68d891f50d94",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Chill?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.lounge_chill_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 630,
+    "y": 2020,
+    "wires": [
+      [],
+      [
+        "68466a5e2fff54cc"
+      ]
+    ]
+  },
+  {
+    "id": "68466a5e2fff54cc",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Wii Scene",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.wii_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 760,
+    "y": 2020,
+    "wires": [
+      [],
+      [
+        "3d0358a0a55a3256"
+      ]
+    ]
+  },
+  {
+    "id": "3d0358a0a55a3256",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Movie Scene",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.movie_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 910,
+    "y": 2020,
+    "wires": [
+      [],
+      [
+        "3a3343d481d81007"
+      ]
+    ]
+  },
+  {
+    "id": "a254ed6de375b68a",
+    "type": "link out",
+    "z": "69bd1d9289305324",
+    "name": "link out 14",
+    "mode": "link",
+    "links": [
+      "bf2ecb14abb5b08c"
+    ],
+    "x": 435,
+    "y": 1960,
+    "wires": []
+  },
+  {
+    "id": "4b9e7705fa472ac7",
+    "type": "comment",
+    "z": "69bd1d9289305324",
+    "name": "Reset Room Lights",
+    "info": "",
+    "x": 550,
+    "y": 1960,
+    "wires": []
+  },
+  {
+    "id": "59240720a4398e71",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "Lounge Motion On",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "binary_sensor.loungemotion_purple2_occupancy"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 1980,
+    "wires": [
+      [
+        "e825257fca8332e1"
+      ],
+      [
+        "9207394b9db7190a"
+      ]
+    ]
+  },
+  {
+    "id": "4ad47aebbf160f22",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "reading?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.reading_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 280,
+    "y": 1600,
+    "wires": [
+      [
+        "e519b84f0d8128cb"
+      ],
+      [
+        "c0bc13f5440eba87"
+      ]
+    ]
+  },
+  {
+    "id": "c0bc13f5440eba87",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Chill?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.lounge_chill_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 430,
+    "y": 1640,
+    "wires": [
+      [
+        "e519b84f0d8128cb"
+      ],
+      [
+        "c2039a99c2f6e715"
+      ]
+    ]
+  },
+  {
+    "id": "c2039a99c2f6e715",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Wii Scene",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.wii_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 580,
+    "y": 1680,
+    "wires": [
+      [
+        "e519b84f0d8128cb"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "e519b84f0d8128cb",
+    "type": "link out",
+    "z": "69bd1d9289305324",
+    "name": "link out 21",
+    "mode": "link",
+    "links": [],
+    "x": 735,
+    "y": 1600,
+    "wires": []
+  },
+  {
+    "id": "4adf8636850c3067",
+    "type": "comment",
+    "z": "69bd1d9289305324",
+    "name": "Light 60%",
+    "info": "",
+    "x": 820,
+    "y": 1600,
+    "wires": []
+  },
+  {
+    "id": "4cfeb52da0708442",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "Getting Dark?",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "sensor.luxsensor_illuminance"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "50",
+    "ifStateType": "num",
+    "ifStateOperator": "lte",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 110,
+    "y": 1600,
+    "wires": [
+      [
+        "4ad47aebbf160f22"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "9479f3034f1d4447",
+    "type": "comment",
+    "z": "69bd1d9289305324",
+    "name": "Lux Checks - getting dark",
+    "info": "",
+    "x": 150,
+    "y": 1560,
+    "wires": []
+  },
+  {
+    "id": "cfbceb55d9ecf557",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "nobody in loo?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "binary_sensor.downstairs_loo_motion_occupancy",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 340,
+    "y": 320,
+    "wires": [
+      [],
+      [
+        "e4564e76e7427ad7"
+      ]
+    ]
+  },
+  {
+    "id": "08cd76cab57a5ad7",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "Upstairs far Motion On",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "binary_sensor.0xa4c13878fe0e5f3e_occupancy"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 140,
+    "y": 1140,
+    "wires": [
+      [],
+      [
+        "7cdf68c993561e30",
+        "024f50ba617fcca5"
+      ]
+    ]
+  },
+  {
+    "id": "dade921dace79536",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "Upstairs Motion On",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "binary_sensor.upstairs_sensor_occupancy"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 1080,
+    "wires": [
+      [],
+      [
+        "7cdf68c993561e30",
+        "024f50ba617fcca5"
+      ]
+    ]
+  },
+  {
+    "id": "7cdf68c993561e30",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "nobody on landing?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "binary_sensor.upstairs_sensor_occupancy",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 430,
+    "y": 1080,
+    "wires": [
+      [],
+      [
+        "e46a4af5a3abe71a"
+      ]
+    ]
+  },
+  {
+    "id": "e46a4af5a3abe71a",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "nobody on far landing?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "binary_sensor.0xa4c13878fe0e5f3e_occupancy",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 700,
+    "y": 1120,
+    "wires": [
+      [],
+      [
+        "89709268e81f8cc1",
+        "e085e1f3d7d9321f"
+      ]
+    ]
+  },
+  {
+    "id": "cf717d55d1a3f05a",
+    "type": "comment",
+    "z": "69bd1d9289305324",
+    "name": "Outside",
+    "info": "",
+    "x": 90,
+    "y": 2200,
+    "wires": []
+  },
+  {
+    "id": "82f06e71f79faf0d",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "Front garden G10 1",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.0xb40ecfd1a09f0000",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "3690",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.outdoorlightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 630,
+    "y": 2380,
+    "wires": []
+  },
+  {
+    "id": "e8e6bf1a4a2f00af",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "Outside Motion On",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "binary_sensor.hue_outdoor_motion_sensor_1_motion"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "30",
+    "forType": "num",
+    "forUnits": "seconds",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "string",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 130,
+    "y": 2380,
+    "wires": [
+      [
+        "6db0c16cee0e9c67"
+      ],
+      [
+        "82f06e71f79faf0d",
+        "a801fa1d01e1486c",
+        "50d85d6a492c0128"
+      ]
+    ]
+  },
+  {
+    "id": "a801fa1d01e1486c",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "Front garden G10 2",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.0xb40ecfd2d0440000",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "3690",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.outdoorlightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 630,
+    "y": 2420,
+    "wires": []
+  },
+  {
+    "id": "50d85d6a492c0128",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "outside door light",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.front_garden_light",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "3636",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.outdoorlightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 630,
+    "y": 2460,
+    "wires": []
+  },
+  {
+    "id": "6db0c16cee0e9c67",
+    "type": "api-call-service",
+    "z": "69bd1d9289305324",
+    "name": "Turn off Outdoor lights",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "light.turn_off",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.outside_front"
+    ],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "light",
+    "service": "turn_off",
+    "x": 640,
+    "y": 2320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "89709268e81f8cc1",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Light Lock?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.landinglightlock_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 910,
+    "y": 1100,
+    "wires": [
+      [],
+      [
+        "b5ae58aa2c68b9f3"
+      ]
+    ]
+  },
+  {
+    "id": "6c4f3af8c484c695",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "foyer light lock",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "input_boolean.foyerlightlock_switch"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 110,
+    "y": 2640,
+    "wires": [
+      [],
+      [
+        "fb0a4604a266f81a"
+      ]
+    ]
+  },
+  {
+    "id": "c9799cec58de2253",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "lobby light",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.lobby_light",
+        "type": "str"
+      },
+      {
+        "name": "transition",
+        "value": "4",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.foyerlightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "lock_override",
+        "value": "1",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 300,
+    "y": 2620,
+    "wires": []
+  },
+  {
+    "id": "dec1d89a5ca3b208",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "stairs light lock",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "input_boolean.stairslightlock_switch"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 120,
+    "y": 2760,
+    "wires": [
+      [],
+      [
+        "a54845f217298b0d"
+      ]
+    ]
+  },
+  {
+    "id": "889e799f54e8e893",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "stairs light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "80",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.stairs_light",
+        "type": "str"
+      },
+      {
+        "name": "transition",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.stairslightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "lock_override",
+        "value": "1",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 300,
+    "y": 2740,
+    "wires": []
+  },
+  {
+    "id": "eb42d79667e37b7c",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "landing light lock",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "input_boolean.landinglightlock_switch"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 120,
+    "y": 2880,
+    "wires": [
+      [],
+      [
+        "bce0818f6da4111a"
+      ]
+    ]
+  },
+  {
+    "id": "af8b2030756cabc8",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "upstairs landing light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "60",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.upstairs_landing_bedroom",
+        "type": "str"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.landinglightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "lock_override",
+        "value": "1",
+        "type": "str"
+      }
+    ],
+    "x": 340,
+    "y": 2860,
+    "wires": []
+  },
+  {
+    "id": "1c09bd4cdce07cb4",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "light.laundry_light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "70",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.laundry_light",
+        "type": "str"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.laundrylightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "lock_override",
+        "value": "1",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "15000",
+        "type": "num"
+      }
+    ],
+    "x": 330,
+    "y": 2980,
+    "wires": []
+  },
+  {
+    "id": "bc58a4ac56b4b7cf",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "laundry light lock",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "input_boolean.laundrylightlock_switch"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 120,
+    "y": 3000,
+    "wires": [
+      [],
+      [
+        "43c21f48553dda0d"
+      ]
+    ]
+  },
+  {
+    "id": "f9a63a7c9d827dd2",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "light.loo_light",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.loo_light",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "1010",
+        "type": "num"
+      },
+      {
+        "name": "transition",
+        "value": "4",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.loolightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "lock_override",
+        "value": "1",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 310,
+    "y": 3080,
+    "wires": []
+  },
+  {
+    "id": "12367b382c7ba55a",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "loo light lock",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "input_boolean.loolightlock_switch"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 110,
+    "y": 3100,
+    "wires": [
+      [],
+      [
+        "dbabc244c0ffd00e"
+      ]
+    ]
+  },
+  {
+    "id": "dc40ed4dcdc9542a",
+    "type": "api-current-state",
+    "z": "69bd1d9289305324",
+    "name": "Light Lock?",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.loungelightlock_switch",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 1230,
+    "y": 2020,
+    "wires": [
+      [],
+      [
+        "ef575ed61fc34775"
+      ]
+    ]
+  },
+  {
+    "id": "9ee780100358f1a5",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "lounge light 70",
+    "env": [
+      {
+        "name": "max_percentage",
+        "value": "70",
+        "type": "num"
+      },
+      {
+        "name": "entity_id",
+        "value": "light.lounge_light",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "3500",
+        "type": "num"
+      },
+      {
+        "name": "transition",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.loungelightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "lock_override",
+        "value": "1",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 320,
+    "y": 3180,
+    "wires": []
+  },
+  {
+    "id": "b27901c6a3a019f6",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "lounge light lock",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "input_boolean.loungelightlock_switch"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 120,
+    "y": 3200,
+    "wires": [
+      [],
+      [
+        "642849dd3af1bc3a"
+      ]
+    ]
+  },
+  {
+    "id": "7591c991f244483f",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "office light lock",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "input_boolean.officelightlock_switch"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "on",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "string",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 120,
+    "y": 3300,
+    "wires": [
+      [],
+      [
+        "29ab1ab1cc579259"
+      ]
+    ]
+  },
+  {
+    "id": "a27504d34dee2369",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "Office Light Bright",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.office_light",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "3500",
+        "type": "num"
+      },
+      {
+        "name": "transition",
+        "value": "3",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.officelightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 610,
+    "y": 3260,
+    "wires": []
+  },
+  {
+    "id": "3ecae55af9af742a",
+    "type": "api-call-service",
+    "z": "69bd1d9289305324",
+    "name": "",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "light.turn_on",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.lounge_light"
+    ],
+    "labelId": [],
+    "data": "{\"brightness_pct\":100, \"transition\":3 , \"color_temp_kelvin\":4247   }",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "last",
+    "blockInputOverrides": false,
+    "domain": "light",
+    "service": "turn_on",
+    "output_location": "",
+    "output_location_type": "none",
+    "x": 310,
+    "y": 1480,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "4f32a8debeb43e25",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "Front garden G10 1",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.0xb40ecfd1a09f0000",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "3690",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.outdoorlightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 630,
+    "y": 3480,
+    "wires": []
+  },
+  {
+    "id": "57d107a8c069edee",
+    "type": "server-state-changed",
+    "z": "69bd1d9289305324",
+    "name": "Outside Lock",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "outdoorlightlock_switch"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "30",
+    "forType": "num",
+    "forUnits": "seconds",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "string",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 110,
+    "y": 3480,
+    "wires": [
+      [],
+      [
+        "6cca0debb4a8f22f"
+      ]
+    ]
+  },
+  {
+    "id": "db71b2676f97aa39",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "Front garden G10 2",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.0xb40ecfd2d0440000",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "3690",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.outdoorlightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 630,
+    "y": 3520,
+    "wires": []
+  },
+  {
+    "id": "4abcc310b868dec8",
+    "type": "subflow:6bdafdf417110693",
+    "z": "69bd1d9289305324",
+    "name": "outside door light",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.front_garden_light",
+        "type": "str"
+      },
+      {
+        "name": "kelvin",
+        "value": "3636",
+        "type": "num"
+      },
+      {
+        "name": "min_percentage",
+        "value": "1",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.outdoorlightlock_switch",
+        "type": "str"
+      },
+      {
+        "name": "low_lux_level",
+        "value": "100000",
+        "type": "num"
+      }
+    ],
+    "x": 630,
+    "y": 3560,
+    "wires": []
+  },
+  {
+    "id": "6cca0debb4a8f22f",
+    "type": "api-call-service",
+    "z": "69bd1d9289305324",
+    "name": "Turn off Outdoor lights",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "light.turn_off",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.outside_front"
+    ],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "light",
+    "service": "turn_off",
+    "x": 640,
+    "y": 3420,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e558e66abd7c1ccf",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Loo Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.loo_light",
+        "type": "str"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.loolightlock_switch",
+        "type": "str"
+      }
+    ],
+    "x": 530,
+    "y": 160,
+    "wires": []
+  },
+  {
+    "id": "e4564e76e7427ad7",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Laundry Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.laundry_light",
+        "type": "str"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.laundrylightlock_switch",
+        "type": "str"
+      }
+    ],
+    "x": 550,
+    "y": 240,
+    "wires": []
+  },
+  {
+    "id": "fd49ddb6a78c7065",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Lobby Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.lobby_light",
+        "type": "str"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.foyerlightlock_switch",
+        "type": "str"
+      }
+    ],
+    "x": 500,
+    "y": 600,
+    "wires": []
+  },
+  {
+    "id": "ef575ed61fc34775",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Lounge Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.lounge_light",
+        "type": "str"
+      },
+      {
+        "name": "transition",
+        "value": "5",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.loungelightlock_switch",
+        "type": "str"
+      }
+    ],
+    "x": 1420,
+    "y": 2020,
+    "wires": []
+  },
+  {
+    "id": "b5ae58aa2c68b9f3",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Landing Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.upstairs_landing_bedroom",
+        "type": "str"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.landinglightlock_switch",
+        "type": "str"
+      }
+    ],
+    "x": 1110,
+    "y": 1100,
+    "wires": []
+  },
+  {
+    "id": "e085e1f3d7d9321f",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Stairs Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.stairs_light",
+        "type": "str"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.stairslightlock_switch",
+        "type": "str"
+      }
+    ],
+    "x": 1100,
+    "y": 1160,
+    "wires": []
+  },
+  {
+    "id": "a5a94332226b6487",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Landing Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.upstairs_landing_bedroom",
+        "type": "str"
+      }
+    ],
+    "x": 710,
+    "y": 880,
+    "wires": []
+  },
+  {
+    "id": "522425ee6f927611",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Stairs Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.stairs_light",
+        "type": "str"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.stairslightlock_switch",
+        "type": "str"
+      }
+    ],
+    "x": 360,
+    "y": 820,
+    "wires": []
+  },
+  {
+    "id": "fb0a4604a266f81a",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Lobby Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.lobby_light",
+        "type": "str"
+      }
+    ],
+    "x": 320,
+    "y": 2660,
+    "wires": []
+  },
+  {
+    "id": "a54845f217298b0d",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Stairs Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.stairs_light",
+        "type": "str"
+      }
+    ],
+    "x": 320,
+    "y": 2780,
+    "wires": []
+  },
+  {
+    "id": "bce0818f6da4111a",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Landing Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.upstairs_landing_bedroom",
+        "type": "str"
+      }
+    ],
+    "x": 330,
+    "y": 2900,
+    "wires": []
+  },
+  {
+    "id": "43c21f48553dda0d",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Laundry Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.laundry_light",
+        "type": "str"
+      }
+    ],
+    "x": 330,
+    "y": 3020,
+    "wires": []
+  },
+  {
+    "id": "dbabc244c0ffd00e",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Loo Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.loo_light",
+        "type": "str"
+      }
+    ],
+    "x": 310,
+    "y": 3120,
+    "wires": []
+  },
+  {
+    "id": "642849dd3af1bc3a",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Lounge Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.lounge_light",
+        "type": "str"
+      },
+      {
+        "name": "transition",
+        "value": "5",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.loungelightlock_switch",
+        "type": "str"
+      }
+    ],
+    "x": 320,
+    "y": 3220,
+    "wires": []
+  },
+  {
+    "id": "29ab1ab1cc579259",
+    "type": "subflow:ad1060243f328063",
+    "z": "69bd1d9289305324",
+    "name": "Office Light Off",
+    "env": [
+      {
+        "name": "entity_id",
+        "value": "light.office_light",
+        "type": "str"
+      },
+      {
+        "name": "transition",
+        "value": "4",
+        "type": "num"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.officelightlock_switch",
+        "type": "str"
+      }
+    ],
+    "x": 487,
+    "y": 3328,
+    "wires": []
+  }
+]
