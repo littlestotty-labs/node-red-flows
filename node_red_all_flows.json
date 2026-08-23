@@ -1,5 +1,13 @@
 [
   {
+    "id": "cd7f1db63ebecbe3",
+    "type": "tab",
+    "label": "Backup Nodes",
+    "disabled": false,
+    "info": "For backing up to git",
+    "env": []
+  },
+  {
     "id": "6f3a0936b99b07e3",
     "type": "tab",
     "label": "Lounge",
@@ -62,6 +70,13 @@
     "disabled": true,
     "info": "",
     "env": []
+  },
+  {
+    "id": "backup_tab",
+    "type": "tab",
+    "label": "Backup",
+    "disabled": false,
+    "info": "Weekly Node-RED flow backup to GitHub (littlestotty-labs/node-red-flows). Triggered by the weekly inject, or manually via 'Run now'. Runs /homeassistant/node_red_flows/export.sh inside this addon."
   },
   {
     "id": "6bdafdf417110693",
@@ -858,6 +873,112 @@
     ]
   },
   {
+    "id": "backup_weekly",
+    "type": "inject",
+    "z": "cd7f1db63ebecbe3",
+    "name": "Weekly (Mon 03:00)",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "0 3 * * 1",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 140,
+    "y": 80,
+    "wires": [
+      [
+        "backup_exec"
+      ]
+    ]
+  },
+  {
+    "id": "backup_manual",
+    "type": "inject",
+    "z": "cd7f1db63ebecbe3",
+    "name": "Run now",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 110,
+    "y": 150,
+    "wires": [
+      [
+        "backup_exec"
+      ]
+    ]
+  },
+  {
+    "id": "backup_exec",
+    "type": "exec",
+    "z": "cd7f1db63ebecbe3",
+    "command": "bash /homeassistant/node_red_flows/export.sh",
+    "addpay": false,
+    "append": "",
+    "useSpawn": "false",
+    "timer": "",
+    "winHide": false,
+    "oldrc": false,
+    "name": "Run flow backup",
+    "x": 340,
+    "y": 110,
+    "wires": [
+      [
+        "backup_dbg_out"
+      ],
+      [
+        "backup_dbg_err"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "backup_dbg_out",
+    "type": "debug",
+    "z": "cd7f1db63ebecbe3",
+    "name": "stdout",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 560,
+    "y": 80,
+    "wires": []
+  },
+  {
+    "id": "backup_dbg_err",
+    "type": "debug",
+    "z": "cd7f1db63ebecbe3",
+    "name": "stderr",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 560,
+    "y": 150,
+    "wires": []
+  },
+  {
     "id": "81387abbd4f31d57",
     "type": "comment",
     "z": "6f3a0936b99b07e3",
@@ -1052,8 +1173,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 170.54861450195312,
-    "y": 526,
+    "x": 170,
+    "y": 206,
     "wires": [
       [
         "2ff49ed9db7fad44"
@@ -1113,8 +1234,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 170.54861450195312,
-    "y": 580,
+    "x": 170,
+    "y": 260,
     "wires": [
       [
         "4f256f7851651bf7"
@@ -1158,8 +1279,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 690,
-    "y": 600,
+    "x": 689.4513854980469,
+    "y": 280,
     "wires": [
       [
         "b8071cf910c4f12b"
@@ -1205,8 +1326,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 880,
-    "y": 620,
+    "x": 879.4513854980469,
+    "y": 300,
     "wires": [
       [
         "b8071cf910c4f12b"
@@ -1252,8 +1373,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 680,
-    "y": 540,
+    "x": 679.4513854980469,
+    "y": 220,
     "wires": [
       [
         "b8071cf910c4f12b"
@@ -1290,8 +1411,8 @@
     "blockInputOverrides": false,
     "domain": "light",
     "service": "turn_on",
-    "x": 1160.5486145019531,
-    "y": 500,
+    "x": 1160,
+    "y": 180,
     "wires": [
       []
     ]
@@ -1303,8 +1424,8 @@
     "name": "Lights Low",
     "mode": "link",
     "links": [],
-    "x": 1075.5486145019531,
-    "y": 560,
+    "x": 1075,
+    "y": 240,
     "wires": []
   },
   {
@@ -1314,8 +1435,8 @@
     "name": "Lights Low",
     "mode": "link",
     "links": [],
-    "x": 1075.5486145019531,
-    "y": 620,
+    "x": 1075,
+    "y": 300,
     "wires": []
   },
   {
@@ -1324,8 +1445,8 @@
     "z": "6f3a0936b99b07e3",
     "name": "Light Low",
     "info": "",
-    "x": 1160.5486145019531,
-    "y": 620,
+    "x": 1160,
+    "y": 300,
     "wires": []
   },
   {
@@ -1334,8 +1455,8 @@
     "z": "6f3a0936b99b07e3",
     "name": "Light Low",
     "info": "",
-    "x": 1180.5486145019531,
-    "y": 560,
+    "x": 1180,
+    "y": 240,
     "wires": []
   },
   {
@@ -1344,8 +1465,8 @@
     "z": "6f3a0936b99b07e3",
     "name": "Movie Playing",
     "info": "",
-    "x": 170.54861450195312,
-    "y": 480,
+    "x": 170,
+    "y": 160,
     "wires": []
   },
   {
@@ -1354,8 +1475,8 @@
     "z": "6f3a0936b99b07e3",
     "name": "Light Off",
     "info": "",
-    "x": 1340.5486145019531,
-    "y": 500,
+    "x": 1340,
+    "y": 180,
     "wires": []
   },
   {
@@ -1365,7 +1486,7 @@
     "name": "**** Turn off scene flags ********************",
     "info": "",
     "x": 260,
-    "y": 960,
+    "y": 420,
     "wires": []
   },
   {
@@ -1394,7 +1515,7 @@
     "domain": "input_boolean",
     "service": "turn_off",
     "x": 890,
-    "y": 1020,
+    "y": 480,
     "wires": [
       [
         "4d14b0c89b2e79e2"
@@ -1427,7 +1548,7 @@
     "domain": "input_boolean",
     "service": "turn_off",
     "x": 880,
-    "y": 1080,
+    "y": 540,
     "wires": [
       [
         "4d14b0c89b2e79e2"
@@ -1460,7 +1581,7 @@
     "domain": "input_boolean",
     "service": "turn_off",
     "x": 880,
-    "y": 1260,
+    "y": 720,
     "wires": [
       [
         "4d14b0c89b2e79e2"
@@ -1493,7 +1614,7 @@
     "domain": "input_boolean",
     "service": "turn_off",
     "x": 870,
-    "y": 1200,
+    "y": 660,
     "wires": [
       [
         "4d14b0c89b2e79e2"
@@ -1526,7 +1647,7 @@
     "domain": "input_boolean",
     "service": "turn_off",
     "x": 870,
-    "y": 1140,
+    "y": 600,
     "wires": [
       [
         "4d14b0c89b2e79e2"
@@ -1571,7 +1692,7 @@
     "repair": false,
     "outputs": 5,
     "x": 440,
-    "y": 1140,
+    "y": 600,
     "wires": [
       [
         "e366370d61158f7f"
@@ -1627,7 +1748,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 690,
-    "y": 1260,
+    "y": 720,
     "wires": [
       [
         "18518c9e1d984c75"
@@ -1672,7 +1793,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 680,
-    "y": 1200,
+    "y": 660,
     "wires": [
       [
         "223eb2061df16f1d"
@@ -1717,7 +1838,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 690,
-    "y": 1020,
+    "y": 480,
     "wires": [
       [
         "37a9be3e7e659470"
@@ -1762,7 +1883,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 670,
-    "y": 1140,
+    "y": 600,
     "wires": [
       [
         "78042723fa14a863"
@@ -1807,7 +1928,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 680,
-    "y": 1080,
+    "y": 540,
     "wires": [
       [
         "3d3db31fd1fecb04"
@@ -1911,7 +2032,7 @@
       }
     ],
     "x": 190,
-    "y": 1000,
+    "y": 460,
     "wires": [
       [
         "327ad6a788aaa37d"
@@ -1970,7 +2091,7 @@
       }
     ],
     "x": 180,
-    "y": 1120,
+    "y": 580,
     "wires": [
       [
         "327ad6a788aaa37d"
@@ -2029,7 +2150,7 @@
       }
     ],
     "x": 170,
-    "y": 1180,
+    "y": 640,
     "wires": [
       [
         "327ad6a788aaa37d"
@@ -2073,8 +2194,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 480,
-    "y": 500,
+    "x": 479.4513854980469,
+    "y": 180,
     "wires": [
       [],
       [
@@ -2118,8 +2239,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 480,
-    "y": 560,
+    "x": 479.4513854980469,
+    "y": 240,
     "wires": [
       [],
       [
@@ -2163,8 +2284,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 480,
-    "y": 620,
+    "x": 479.4513854980469,
+    "y": 300,
     "wires": [
       [],
       [
@@ -2223,7 +2344,7 @@
       }
     ],
     "x": 170,
-    "y": 1240,
+    "y": 700,
     "wires": [
       [
         "327ad6a788aaa37d"
@@ -2385,7 +2506,7 @@
       {
         "property": "payload",
         "propertyType": "msg",
-        "value": "Wii",
+        "value": "WII",
         "valueType": "str"
       },
       {
@@ -2868,7 +2989,7 @@
     "sat": true,
     "sun": true,
     "x": 160,
-    "y": 1340,
+    "y": 800,
     "wires": [
       [
         "327ad6a788aaa37d",
@@ -2884,7 +3005,7 @@
     "name": "midnight check",
     "info": "",
     "x": 180,
-    "y": 1300,
+    "y": 760,
     "wires": []
   },
   {
@@ -2913,7 +3034,7 @@
     "domain": "light",
     "service": "turn_off",
     "x": 410,
-    "y": 1360,
+    "y": 820,
     "wires": [
       []
     ]
@@ -2932,7 +3053,7 @@
     "deviceId": [],
     "entityId": [],
     "labelId": [],
-    "data": "{\"account\":\"01K8YPZQ93CH2RA0EY3CGNTRJS\",\"media_content_id\":\"spotify:playlist:37i9dQZF1EIZ0V0T7oWUAc?si=d5e1ddb3c6e044cd\",\"media_content_type\":\"music\",\"media_player\":{\"entity_id\":\"media_player.living_room_speaker\"}}",
+    "data": "{\"account\":\"graham\",\"media_content_id\":\"spotify:playlist:37i9dQZF1EIZ0V0T7oWUAc?si=d5e1ddb3c6e044cd\",\"media_content_type\":\"music\",\"media_player\":{\"entity_id\":\"media_player.living_room_speaker\"}}",
     "dataType": "json",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -2979,8 +3100,8 @@
     "wires": [
       [
         "dd7108692e8b425f",
-        "b9d5b0e09e5a142b",
-        "534cea16eefe6272"
+        "534cea16eefe6272",
+        "cf8fdce104c2f183"
       ]
     ]
   },
@@ -3009,7 +3130,7 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_off",
-    "x": 1520,
+    "x": 1200,
     "y": 2640,
     "wires": [
       []
@@ -3031,7 +3152,7 @@
       "media_player.lg_webos_smart_tv"
     ],
     "labelId": [],
-    "data": "{\"entity_id\":\"lg_webos_smart_tv\",\"source\":\"WII\"}",
+    "data": "{\"source\":\"WII\"}",
     "dataType": "json",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -3040,23 +3161,13 @@
     "blockInputOverrides": false,
     "domain": "media_player",
     "service": "select_source",
-    "x": 1250,
-    "y": 2580,
+    "x": 930,
+    "y": 2600,
     "wires": [
       [
         "6eac8e0742c04624"
       ]
     ]
-  },
-  {
-    "id": "7d11646145990958",
-    "type": "comment",
-    "z": "6f3a0936b99b07e3",
-    "name": "Remote actions",
-    "info": "",
-    "x": 180,
-    "y": 160,
-    "wires": []
   },
   {
     "id": "a10a8bd1a5a0b39d",
@@ -3104,7 +3215,7 @@
     "z": "6f3a0936b99b07e3",
     "name": "Turn on Scenes - MOVIE",
     "info": "",
-    "x": 210,
+    "x": 150,
     "y": 2860,
     "wires": []
   },
@@ -3261,7 +3372,7 @@
     "name": "**** Check for nothing on ********************",
     "info": "",
     "x": 260,
-    "y": 1440,
+    "y": 900,
     "wires": []
   },
   {
@@ -3315,7 +3426,7 @@
       }
     ],
     "x": 190,
-    "y": 1480,
+    "y": 940,
     "wires": [
       [],
       [
@@ -3374,7 +3485,7 @@
       }
     ],
     "x": 180,
-    "y": 1600,
+    "y": 1060,
     "wires": [
       [],
       [
@@ -3433,7 +3544,7 @@
       }
     ],
     "x": 170,
-    "y": 1660,
+    "y": 1120,
     "wires": [
       [],
       [
@@ -3492,7 +3603,7 @@
       }
     ],
     "x": 190,
-    "y": 1540,
+    "y": 1000,
     "wires": [
       [],
       [
@@ -3551,7 +3662,7 @@
       }
     ],
     "x": 170,
-    "y": 1720,
+    "y": 1180,
     "wires": [
       [],
       [
@@ -3567,7 +3678,7 @@
     "mode": "link",
     "links": [],
     "x": 355,
-    "y": 1580,
+    "y": 1040,
     "wires": []
   },
   {
@@ -3577,7 +3688,7 @@
     "name": "Reset Room Lights",
     "info": "",
     "x": 470,
-    "y": 1580,
+    "y": 1040,
     "wires": []
   },
   {
@@ -3587,7 +3698,7 @@
     "name": "**** Turn off scene ********************",
     "info": "",
     "x": 240,
-    "y": 1820,
+    "y": 1260,
     "wires": []
   },
   {
@@ -3641,7 +3752,7 @@
       }
     ],
     "x": 160,
-    "y": 1980,
+    "y": 1420,
     "wires": [
       [],
       [
@@ -3700,7 +3811,7 @@
       }
     ],
     "x": 180,
-    "y": 1920,
+    "y": 1360,
     "wires": [
       [],
       [
@@ -3759,7 +3870,7 @@
       }
     ],
     "x": 170,
-    "y": 2040,
+    "y": 1480,
     "wires": [
       [],
       [
@@ -3774,7 +3885,7 @@
     "name": "Nothing to do for this, light resets",
     "info": "",
     "x": 490,
-    "y": 1860,
+    "y": 1300,
     "wires": []
   },
   {
@@ -3814,7 +3925,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 430,
-    "y": 1920,
+    "y": 1360,
     "wires": [
       [
         "de0a506ff091bba0"
@@ -3848,7 +3959,7 @@
     "domain": "media_player",
     "service": "turn_off",
     "x": 640,
-    "y": 1920,
+    "y": 1360,
     "wires": [
       []
     ]
@@ -3890,7 +4001,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 410,
-    "y": 1980,
+    "y": 1420,
     "wires": [
       [],
       [
@@ -3935,7 +4046,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 400,
-    "y": 2040,
+    "y": 1480,
     "wires": [
       [],
       [
@@ -3980,7 +4091,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 820,
-    "y": 1980,
+    "y": 1420,
     "wires": [
       [
         "49eed9b0117be36b"
@@ -4014,7 +4125,7 @@
     "domain": "homeassistant",
     "service": "turn_off",
     "x": 1040,
-    "y": 1980,
+    "y": 1420,
     "wires": [
       [
         "eb27899c8d202602"
@@ -4028,7 +4139,7 @@
     "name": "Whatsapp",
     "info": "",
     "x": 160,
-    "y": 1860,
+    "y": 1300,
     "wires": []
   },
   {
@@ -4038,7 +4149,7 @@
     "name": "Chill Mode",
     "info": "",
     "x": 280,
-    "y": 1860,
+    "y": 1300,
     "wires": []
   },
   {
@@ -4067,7 +4178,7 @@
     "domain": "input_boolean",
     "service": "turn_on",
     "x": 610,
-    "y": 2020,
+    "y": 1460,
     "wires": [
       [
         "eb27899c8d202602",
@@ -4101,7 +4212,7 @@
     "domain": "input_boolean",
     "service": "turn_off",
     "x": 1200,
-    "y": 2020,
+    "y": 1460,
     "wires": [
       []
     ]
@@ -4177,7 +4288,7 @@
     "domain": "homeassistant",
     "service": "turn_off",
     "x": 1050,
-    "y": 2100,
+    "y": 1540,
     "wires": [
       []
     ]
@@ -4197,35 +4308,6 @@
     "wires": []
   },
   {
-    "id": "ce7c7c4c375b90cf",
-    "type": "inject",
-    "z": "6f3a0936b99b07e3",
-    "name": "",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 640,
-    "y": 2100,
-    "wires": [
-      [
-        "fd565a0c7bd908a0"
-      ]
-    ]
-  },
-  {
     "id": "6b074a992677dee1",
     "type": "delay",
     "z": "6f3a0936b99b07e3",
@@ -4243,7 +4325,7 @@
     "allowrate": false,
     "outputs": 1,
     "x": 820,
-    "y": 2060,
+    "y": 1500,
     "wires": [
       [
         "fd565a0c7bd908a0"
@@ -4263,50 +4345,6 @@
     "x": 600,
     "y": 2840,
     "wires": []
-  },
-  {
-    "id": "b9d5b0e09e5a142b",
-    "type": "ha-wait-until",
-    "z": "6f3a0936b99b07e3",
-    "name": "Wait until TV on",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "entities": {
-      "entity": [
-        "media_player.lg_webos_smart_tv"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "property": "attributes.source",
-    "comparator": "includes",
-    "value": "Streaming Box, WII",
-    "valueType": "str",
-    "timeout": "10",
-    "timeoutType": "num",
-    "timeoutUnits": "seconds",
-    "checkCurrentState": true,
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Passed",
-        "valueType": "str"
-      }
-    ],
-    "x": 680,
-    "y": 2680,
-    "wires": [
-      [
-        "c48c42a6.78523"
-      ],
-      [
-        "449e217051a52a67",
-        "06c6f92e84d2977e"
-      ]
-    ]
   },
   {
     "id": "37aebf9ab4e22953",
@@ -4356,9 +4394,9 @@
       "substring": [],
       "regex": []
     },
-    "property": "attributes.source",
-    "comparator": "includes",
-    "value": "Streaming Box, WII",
+    "property": "state",
+    "comparator": "is",
+    "value": "on",
     "valueType": "str",
     "timeout": "12",
     "timeoutType": "num",
@@ -4455,47 +4493,6 @@
     "x": 1180,
     "y": 2480,
     "wires": [
-      []
-    ]
-  },
-  {
-    "id": "06c6f92e84d2977e",
-    "type": "ha-wait-until",
-    "z": "6f3a0936b99b07e3",
-    "name": "Wait until TV on",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "entities": {
-      "entity": [
-        "media_player.lg_webos_smart_tv"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "property": "attributes.source",
-    "comparator": "includes",
-    "value": "Streaming Box, WII",
-    "valueType": "str",
-    "timeout": "6",
-    "timeoutType": "num",
-    "timeoutUnits": "seconds",
-    "checkCurrentState": true,
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Passed",
-        "valueType": "str"
-      }
-    ],
-    "x": 1180,
-    "y": 2700,
-    "wires": [
-      [
-        "c48c42a6.78523"
-      ],
       []
     ]
   },
@@ -5050,7 +5047,7 @@
     "domain": "switch",
     "service": "turn_off",
     "x": 390,
-    "y": 1320,
+    "y": 780,
     "wires": [
       []
     ]
@@ -5423,42 +5420,13 @@
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 320,
+    "payload": "WII",
+    "payloadType": "str",
+    "x": 310,
     "y": 2800,
     "wires": [
       [
         "39baf474aa5c2394"
-      ]
-    ]
-  },
-  {
-    "id": "760cc5e4ea66b431",
-    "type": "inject",
-    "z": "6f3a0936b99b07e3",
-    "name": "",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 1220,
-    "y": 2300,
-    "wires": [
-      [
-        "ce117b3c3046f1c7"
       ]
     ]
   },
@@ -5488,7 +5456,7 @@
     "domain": "input_text",
     "service": "set_value",
     "x": 1230,
-    "y": 1120,
+    "y": 580,
     "wires": [
       []
     ]
@@ -5773,74 +5741,10 @@
       }
     ],
     "x": 190,
-    "y": 1060,
+    "y": 520,
     "wires": [
       [],
       []
-    ]
-  },
-  {
-    "id": "85b6482f0a644c57",
-    "type": "api-call-service",
-    "z": "6f3a0936b99b07e3",
-    "name": "Play Playlist",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.play_media",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "media_player.spotifyplus_graham"
-    ],
-    "labelId": [],
-    "data": "{\t    \"media_content_id\": \"spotify:playlist:37i9dQZF1EIZ0V0T7oWUAc?si=d5e1ddb3c6e044cd\",\t    \"media_content_type\": \"music\"\t}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": true,
-    "domain": "media_player",
-    "service": "play_media",
-    "x": 1450,
-    "y": 2340,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "ce117b3c3046f1c7",
-    "type": "api-call-service",
-    "z": "6f3a0936b99b07e3",
-    "name": "select source",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.select_source",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "media_player.spotifyplus_graham"
-    ],
-    "labelId": [],
-    "data": "{\"source\":\"Living Room Speaker\"}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": true,
-    "domain": "media_player",
-    "service": "select_source",
-    "x": 1430,
-    "y": 2280,
-    "wires": [
-      [
-        "85b6482f0a644c57"
-      ]
     ]
   },
   {
@@ -5893,42 +5797,13 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 610,
-    "y": 680,
+    "x": 690,
+    "y": 360,
     "wires": [
       [
         "a64b29240b5fa3aa"
       ],
       []
-    ]
-  },
-  {
-    "id": "5372502bfa66bcde",
-    "type": "inject",
-    "z": "6f3a0936b99b07e3",
-    "name": "",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 200,
-    "y": 400,
-    "wires": [
-      [
-        "cd7b90ed3dbff638"
-      ]
     ]
   },
   {
@@ -5982,9 +5857,9 @@
       "substring": [],
       "regex": []
     },
-    "property": "attributes.source",
-    "comparator": "includes",
-    "value": "Streaming Box, WII",
+    "property": "state",
+    "comparator": "is",
+    "value": "on",
     "valueType": "str",
     "timeout": "10",
     "timeoutType": "num",
@@ -6003,7 +5878,8 @@
     "y": 3580,
     "wires": [
       [
-        "87cd1ca8833e729e"
+        "87cd1ca8833e729e",
+        "155eb7e91edde1cc"
       ],
       [
         "074afb8d3cc8e779"
@@ -6124,6 +6000,173 @@
     "x": 600,
     "y": 3760,
     "wires": []
+  },
+  {
+    "id": "155eb7e91edde1cc",
+    "type": "api-call-service",
+    "z": "6f3a0936b99b07e3",
+    "name": "Switch TV Source",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "media_player.select_source",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "media_player.lg_webos_smart_tv"
+    ],
+    "labelId": [],
+    "data": "{\"source\":\"WII\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "media_player",
+    "service": "select_source",
+    "x": 710,
+    "y": 3480,
+    "wires": [
+      [
+        "69279276348f7e34"
+      ]
+    ]
+  },
+  {
+    "id": "69279276348f7e34",
+    "type": "debug",
+    "z": "6f3a0936b99b07e3",
+    "name": "debug 6",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1000,
+    "y": 3500,
+    "wires": []
+  },
+  {
+    "id": "cf8fdce104c2f183",
+    "type": "ha-wait-until",
+    "z": "6f3a0936b99b07e3",
+    "name": "Wait until TV on",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "entities": {
+      "entity": [
+        "media_player.lg_webos_smart_tv"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "property": "state",
+    "comparator": "is",
+    "value": "on",
+    "valueType": "str",
+    "timeout": "10",
+    "timeoutType": "num",
+    "timeoutUnits": "seconds",
+    "checkCurrentState": true,
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "Passed",
+        "valueType": "str"
+      }
+    ],
+    "x": 640,
+    "y": 2660,
+    "wires": [
+      [
+        "c48c42a6.78523"
+      ],
+      [
+        "449e217051a52a67",
+        "0148b828b7f335d7"
+      ]
+    ]
+  },
+  {
+    "id": "0148b828b7f335d7",
+    "type": "ha-wait-until",
+    "z": "6f3a0936b99b07e3",
+    "name": "Wait until TV on",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "entities": {
+      "entity": [
+        "media_player.lg_webos_smart_tv"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "property": "state",
+    "comparator": "is",
+    "value": "on",
+    "valueType": "str",
+    "timeout": "10",
+    "timeoutType": "num",
+    "timeoutUnits": "seconds",
+    "checkCurrentState": true,
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "Passed",
+        "valueType": "str"
+      }
+    ],
+    "x": 920,
+    "y": 2660,
+    "wires": [
+      [
+        "c48c42a6.78523"
+      ],
+      [
+        "449e217051a52a67",
+        "6eac8e0742c04624"
+      ]
+    ]
+  },
+  {
+    "id": "b2eeb37807c2c3c4",
+    "type": "inject",
+    "z": "6f3a0936b99b07e3",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "Movie",
+    "payloadType": "str",
+    "x": 130,
+    "y": 2980,
+    "wires": [
+      [
+        "eb626cd745a086ec"
+      ]
+    ]
   },
   {
     "id": "6c0eb4b2743c994b",
@@ -16185,112 +16228,5 @@
         "2b2b5762f73defe8"
       ]
     ]
-  },
-  {
-    "id": "backup_tab",
-    "type": "tab",
-    "label": "Backup",
-    "disabled": false,
-    "info": "Weekly Node-RED flow backup to GitHub (littlestotty-labs/node-red-flows). Triggered by the weekly inject, or manually via 'Run now'. Runs /homeassistant/node_red_flows/export.sh inside this addon."
-  },
-  {
-    "id": "backup_weekly",
-    "type": "inject",
-    "name": "Weekly (Mon 03:00)",
-    "props": [
-      {
-        "p": "payload"
-      }
-    ],
-    "repeat": "",
-    "crontab": "0 3 * * 1",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 110,
-    "y": 80,
-    "wires": [
-      [
-        "backup_exec"
-      ]
-    ]
-  },
-  {
-    "id": "backup_manual",
-    "type": "inject",
-    "name": "Run now",
-    "props": [
-      {
-        "p": "payload"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 110,
-    "y": 150,
-    "wires": [
-      [
-        "backup_exec"
-      ]
-    ]
-  },
-  {
-    "id": "backup_exec",
-    "type": "exec",
-    "command": "bash /homeassistant/node_red_flows/export.sh",
-    "addpay": false,
-    "append": "",
-    "useSpawn": "false",
-    "timer": "",
-    "winHide": false,
-    "oldrc": false,
-    "name": "Run flow backup",
-    "x": 340,
-    "y": 110,
-    "wires": [
-      [
-        "backup_dbg_out"
-      ],
-      [
-        "backup_dbg_err"
-      ]
-    ]
-  },
-  {
-    "id": "backup_dbg_out",
-    "type": "debug",
-    "name": "stdout",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 560,
-    "y": 80,
-    "wires": []
-  },
-  {
-    "id": "backup_dbg_err",
-    "type": "debug",
-    "name": "stderr",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 560,
-    "y": 150,
-    "wires": []
   }
 ]
