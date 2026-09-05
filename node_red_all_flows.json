@@ -3099,9 +3099,8 @@
     "y": 2680,
     "wires": [
       [
-        "dd7108692e8b425f",
         "534cea16eefe6272",
-        "cf8fdce104c2f183"
+        "9c67350bb0476e7a"
       ]
     ]
   },
@@ -3130,8 +3129,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_off",
-    "x": 1200,
-    "y": 2640,
+    "x": 1240,
+    "y": 2660,
     "wires": [
       []
     ]
@@ -3161,8 +3160,8 @@
     "blockInputOverrides": false,
     "domain": "media_player",
     "service": "select_source",
-    "x": 930,
-    "y": 2600,
+    "x": 1090,
+    "y": 2660,
     "wires": [
       [
         "6eac8e0742c04624"
@@ -4294,20 +4293,6 @@
     ]
   },
   {
-    "id": "dd7108692e8b425f",
-    "type": "wake on lan",
-    "z": "6f3a0936b99b07e3",
-    "mac": "74-40-BE-9B-A8-E0",
-    "host": "10.0.0.127",
-    "udpport": 9,
-    "numpackets": 3,
-    "interval": 100,
-    "name": "WOL TV",
-    "x": 620,
-    "y": 2620,
-    "wires": []
-  },
-  {
     "id": "6b074a992677dee1",
     "type": "delay",
     "z": "6f3a0936b99b07e3",
@@ -4953,8 +4938,8 @@
     "blockInputOverrides": false,
     "domain": "input_select",
     "service": "select_option",
-    "x": 650,
-    "y": 2760,
+    "x": 670,
+    "y": 2720,
     "wires": [
       []
     ]
@@ -5402,35 +5387,6 @@
     ]
   },
   {
-    "id": "e967f0b733adbd30",
-    "type": "inject",
-    "z": "6f3a0936b99b07e3",
-    "name": "",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "WII",
-    "payloadType": "str",
-    "x": 310,
-    "y": 2800,
-    "wires": [
-      [
-        "39baf474aa5c2394"
-      ]
-    ]
-  },
-  {
     "id": "4d14b0c89b2e79e2",
     "type": "api-call-service",
     "z": "6f3a0936b99b07e3",
@@ -5610,8 +5566,8 @@
     "blockInputOverrides": false,
     "domain": "input_text",
     "service": "set_value",
-    "x": 390,
-    "y": 2620,
+    "x": 910,
+    "y": 2720,
     "wires": [
       []
     ]
@@ -5675,20 +5631,6 @@
     "wires": [
       []
     ]
-  },
-  {
-    "id": "449e217051a52a67",
-    "type": "wake on lan",
-    "z": "6f3a0936b99b07e3",
-    "mac": "74-40-BE-9B-A8-E0",
-    "host": "10.0.0.127",
-    "udpport": 9,
-    "numpackets": 3,
-    "interval": 100,
-    "name": "WOL TV",
-    "x": 900,
-    "y": 2720,
-    "wires": []
   },
   {
     "id": "8dcd16a9194ab3cb",
@@ -6083,60 +6025,13 @@
         "valueType": "str"
       }
     ],
-    "x": 640,
+    "x": 900,
     "y": 2660,
     "wires": [
       [
         "c48c42a6.78523"
       ],
-      [
-        "449e217051a52a67",
-        "0148b828b7f335d7"
-      ]
-    ]
-  },
-  {
-    "id": "0148b828b7f335d7",
-    "type": "ha-wait-until",
-    "z": "6f3a0936b99b07e3",
-    "name": "Wait until TV on",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "entities": {
-      "entity": [
-        "media_player.lg_webos_smart_tv"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "property": "state",
-    "comparator": "is",
-    "value": "on",
-    "valueType": "str",
-    "timeout": "10",
-    "timeoutType": "num",
-    "timeoutUnits": "seconds",
-    "checkCurrentState": true,
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Passed",
-        "valueType": "str"
-      }
-    ],
-    "x": 920,
-    "y": 2660,
-    "wires": [
-      [
-        "c48c42a6.78523"
-      ],
-      [
-        "449e217051a52a67",
-        "6eac8e0742c04624"
-      ]
+      []
     ]
   },
   {
@@ -6165,6 +6060,39 @@
     "wires": [
       [
         "eb626cd745a086ec"
+      ]
+    ]
+  },
+  {
+    "id": "9c67350bb0476e7a",
+    "type": "api-call-service",
+    "z": "6f3a0936b99b07e3",
+    "name": "Turn on Shield",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "media_player.turn_on",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "media_player.android_tv_10_0_0_26"
+    ],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "media_player",
+    "service": "turn_on",
+    "x": 640,
+    "y": 2660,
+    "wires": [
+      [
+        "cf8fdce104c2f183"
       ]
     ]
   },
@@ -7928,7 +7856,7 @@
     "env": [
       {
         "name": "max_percentage",
-        "value": "70",
+        "value": "72",
         "type": "num"
       },
       {
@@ -7939,11 +7867,6 @@
       {
         "name": "kelvin",
         "value": "3500",
-        "type": "num"
-      },
-      {
-        "name": "transition",
-        "value": "1",
         "type": "num"
       },
       {

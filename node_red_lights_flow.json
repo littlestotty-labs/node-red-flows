@@ -552,7 +552,7 @@
     "env": [
       {
         "name": "max_percentage",
-        "value": "70",
+        "value": "72",
         "type": "num"
       },
       {
@@ -563,11 +563,6 @@
       {
         "name": "kelvin",
         "value": "3500",
-        "type": "num"
-      },
-      {
-        "name": "transition",
-        "value": "1",
         "type": "num"
       },
       {
