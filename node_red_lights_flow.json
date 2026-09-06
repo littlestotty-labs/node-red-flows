@@ -3879,6 +3879,11 @@
         "name": "entity_id",
         "value": "light.upstairs_landing_bedroom",
         "type": "str"
+      },
+      {
+        "name": "lock_sensor",
+        "value": "input_boolean.landinglightlock_switch",
+        "type": "str"
       }
     ],
     "x": 710,
