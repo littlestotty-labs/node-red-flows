@@ -2077,21 +2077,21 @@
     "server": "178754b9.fedf4b",
     "version": 7,
     "debugenabled": false,
-    "action": "media_player.play_media",
+    "action": "spotifyplus.player_media_play_context",
     "floorId": [],
     "areaId": [],
     "deviceId": [],
     "entityId": [],
     "labelId": [],
-    "data": "{\"account\":\"graham\",\"media_content_id\":\"spotify:playlist:37i9dQZF1EIZ0V0T7oWUAc?si=d5e1ddb3c6e044cd\",\"media_content_type\":\"music\",\"media_player\":{\"entity_id\":\"media_player.living_room_speaker\"}}",
+    "data": "{\"entity_id\":\"media_player.spotifyplus_graham\",\"device_id\":\"Living room speaker\",\"context_uri\":\"spotify:playlist:37i9dQZF1EIZ0V0T7oWUAc?si=d5e1ddb3c6e044cd\"}",
     "dataType": "json",
     "mergeContext": "",
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
     "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "play_media",
+    "domain": "spotifyplus",
+    "service": "player_media_play_context",
     "x": 1420,
     "y": 2400,
     "wires": [
@@ -4209,7 +4209,9 @@
     "x": 190,
     "y": 520,
     "wires": [
-      [],
+      [
+        "327ad6a788aaa37d"
+      ],
       []
     ]
   },
@@ -4652,6 +4654,35 @@
     "y": 2900,
     "wires": [
       []
+    ]
+  },
+  {
+    "id": "95667ba5ae74c6ac",
+    "type": "inject",
+    "z": "6f3a0936b99b07e3",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 1180,
+    "y": 2340,
+    "wires": [
+      [
+        "c5826f3986c4bb01"
+      ]
     ]
   }
 ]
