@@ -1983,7 +1983,7 @@
     "server": "178754b9.fedf4b",
     "version": 3,
     "outputs": 2,
-    "halt_if": "60",
+    "halt_if": "65",
     "halt_if_type": "num",
     "halt_if_compare": "gte",
     "entity_id": "sensor.temp_sensor_humidity",

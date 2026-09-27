@@ -5657,6 +5657,35 @@
     ]
   },
   {
+    "id": "771811be43c1f027",
+    "type": "inject",
+    "z": "6f3a0936b99b07e3",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 940,
+    "y": 2700,
+    "wires": [
+      [
+        "c48c42a6.78523"
+      ]
+    ]
+  },
+  {
     "id": "6c0eb4b2743c994b",
     "type": "eztimer",
     "z": "2aac704b012aedce",
@@ -6870,6 +6899,35 @@
     "x": 910,
     "y": 240,
     "wires": []
+  },
+  {
+    "id": "5e17a319b8d02b33",
+    "type": "inject",
+    "z": "2aac704b012aedce",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 140,
+    "y": 400,
+    "wires": [
+      [
+        "e799f574aa0f4e4e"
+      ]
+    ]
   },
   {
     "id": "fb0e479bed3bd990",
@@ -12883,7 +12941,7 @@
     "server": "178754b9.fedf4b",
     "version": 3,
     "outputs": 2,
-    "halt_if": "60",
+    "halt_if": "65",
     "halt_if_type": "num",
     "halt_if_compare": "gte",
     "entity_id": "sensor.temp_sensor_humidity",

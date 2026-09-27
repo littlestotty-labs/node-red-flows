@@ -4684,5 +4684,34 @@
         "c5826f3986c4bb01"
       ]
     ]
+  },
+  {
+    "id": "771811be43c1f027",
+    "type": "inject",
+    "z": "6f3a0936b99b07e3",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 940,
+    "y": 2700,
+    "wires": [
+      [
+        "c48c42a6.78523"
+      ]
+    ]
   }
 ]
