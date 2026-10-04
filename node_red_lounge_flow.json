@@ -431,7 +431,7 @@
       "light.lounge_light"
     ],
     "labelId": [],
-    "data": "{\"entity_id\":\"light.lounge_light\",\"brightness_pct\":0,\"transition\":3}",
+    "data": "{\"entity_id\":\"light.lounge_light\",\"brightness_pct\":0,\"transition\":5}",
     "dataType": "json",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -452,7 +452,9 @@
     "z": "6f3a0936b99b07e3",
     "name": "Lights Low",
     "mode": "link",
-    "links": [],
+    "links": [
+      "733ebaa1883876cb"
+    ],
     "x": 1075,
     "y": 240,
     "wires": []
@@ -4711,6 +4713,35 @@
     "wires": [
       [
         "c48c42a6.78523"
+      ]
+    ]
+  },
+  {
+    "id": "e02766a26d7e9fe0",
+    "type": "inject",
+    "z": "6f3a0936b99b07e3",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 1180,
+    "y": 3080,
+    "wires": [
+      [
+        "0d53a6a830f6b824"
       ]
     ]
   }

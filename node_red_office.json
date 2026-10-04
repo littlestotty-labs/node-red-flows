@@ -1250,5 +1250,182 @@
         "e799f574aa0f4e4e"
       ]
     ]
+  },
+  {
+    "id": "b137ddd39be1379a",
+    "type": "api-call-service",
+    "z": "2aac704b012aedce",
+    "name": "Notify Offline",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "notify.mobile_app_sm_s926b",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "labelId": [],
+    "data": "{\"title\":\"Internet Offline\",\"message\":\"Internet has just gone offline, check the logs.\",\"data\":{\"color\":\"#2DF56D\"}}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "notify",
+    "service": "mobile_app_sm_s926b",
+    "x": 590,
+    "y": 900,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "2d516c6f6c8c0337",
+    "type": "server-state-changed",
+    "z": "2aac704b012aedce",
+    "name": "",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "binary_sensor.living_room_deco_internet_online"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "string",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 250,
+    "y": 900,
+    "wires": [
+      [
+        "b137ddd39be1379a"
+      ],
+      [
+        "0061f011adfc7afd"
+      ]
+    ]
+  },
+  {
+    "id": "60ba32afcfb25061",
+    "type": "inject",
+    "z": "2aac704b012aedce",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 420,
+    "y": 860,
+    "wires": [
+      [
+        "b137ddd39be1379a"
+      ]
+    ]
+  },
+  {
+    "id": "0061f011adfc7afd",
+    "type": "api-call-service",
+    "z": "2aac704b012aedce",
+    "name": "Notify Online",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "notify.mobile_app_sm_s926b",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "labelId": [],
+    "data": "{\"title\":\"Internet Online\",\"message\":\"Internet has been restored\",\"data\":{\"color\":\"#2DF56D\"}}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "notify",
+    "service": "mobile_app_sm_s926b",
+    "x": 590,
+    "y": 960,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1957b56d3c70b1da",
+    "type": "inject",
+    "z": "2aac704b012aedce",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 420,
+    "y": 940,
+    "wires": [
+      [
+        "0061f011adfc7afd"
+      ]
+    ]
   }
 ]

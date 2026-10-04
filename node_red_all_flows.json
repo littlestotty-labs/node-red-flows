@@ -1402,7 +1402,7 @@
       "light.lounge_light"
     ],
     "labelId": [],
-    "data": "{\"entity_id\":\"light.lounge_light\",\"brightness_pct\":0,\"transition\":3}",
+    "data": "{\"entity_id\":\"light.lounge_light\",\"brightness_pct\":0,\"transition\":5}",
     "dataType": "json",
     "mergeContext": "",
     "mustacheAltTags": false,
@@ -1423,7 +1423,9 @@
     "z": "6f3a0936b99b07e3",
     "name": "Lights Low",
     "mode": "link",
-    "links": [],
+    "links": [
+      "733ebaa1883876cb"
+    ],
     "x": 1075,
     "y": 240,
     "wires": []
@@ -5686,6 +5688,35 @@
     ]
   },
   {
+    "id": "e02766a26d7e9fe0",
+    "type": "inject",
+    "z": "6f3a0936b99b07e3",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 1180,
+    "y": 3080,
+    "wires": [
+      [
+        "0d53a6a830f6b824"
+      ]
+    ]
+  },
+  {
     "id": "6c0eb4b2743c994b",
     "type": "eztimer",
     "z": "2aac704b012aedce",
@@ -6930,6 +6961,183 @@
     ]
   },
   {
+    "id": "b137ddd39be1379a",
+    "type": "api-call-service",
+    "z": "2aac704b012aedce",
+    "name": "Notify Offline",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "notify.mobile_app_sm_s926b",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "labelId": [],
+    "data": "{\"title\":\"Internet Offline\",\"message\":\"Internet has just gone offline, check the logs.\",\"data\":{\"color\":\"#2DF56D\"}}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "notify",
+    "service": "mobile_app_sm_s926b",
+    "x": 590,
+    "y": 900,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "2d516c6f6c8c0337",
+    "type": "server-state-changed",
+    "z": "2aac704b012aedce",
+    "name": "",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "binary_sensor.living_room_deco_internet_online"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "off",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "string",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 250,
+    "y": 900,
+    "wires": [
+      [
+        "b137ddd39be1379a"
+      ],
+      [
+        "0061f011adfc7afd"
+      ]
+    ]
+  },
+  {
+    "id": "60ba32afcfb25061",
+    "type": "inject",
+    "z": "2aac704b012aedce",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 420,
+    "y": 860,
+    "wires": [
+      [
+        "b137ddd39be1379a"
+      ]
+    ]
+  },
+  {
+    "id": "0061f011adfc7afd",
+    "type": "api-call-service",
+    "z": "2aac704b012aedce",
+    "name": "Notify Online",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "notify.mobile_app_sm_s926b",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "labelId": [],
+    "data": "{\"title\":\"Internet Online\",\"message\":\"Internet has been restored\",\"data\":{\"color\":\"#2DF56D\"}}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "notify",
+    "service": "mobile_app_sm_s926b",
+    "x": 590,
+    "y": 960,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1957b56d3c70b1da",
+    "type": "inject",
+    "z": "2aac704b012aedce",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 420,
+    "y": 940,
+    "wires": [
+      [
+        "0061f011adfc7afd"
+      ]
+    ]
+  },
+  {
     "id": "fb0e479bed3bd990",
     "type": "comment",
     "z": "69bd1d9289305324",
@@ -7443,7 +7651,7 @@
       },
       {
         "name": "transition",
-        "value": "4",
+        "value": "5",
         "type": "num"
       },
       {
