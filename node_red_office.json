@@ -144,7 +144,7 @@
     "y": 340,
     "wires": [
       [
-        "e799f574aa0f4e4e"
+        "9f251ef9346d8bf8"
       ]
     ]
   },
@@ -173,8 +173,8 @@
     "blockInputOverrides": false,
     "domain": "switch",
     "service": "turn_off",
-    "x": 330,
-    "y": 340,
+    "x": 410,
+    "y": 400,
     "wires": [
       [
         "18610afe4634fd34",
@@ -225,13 +225,11 @@
     "server": "178754b9.fedf4b",
     "version": 7,
     "debugenabled": false,
-    "action": "media_player.media_pause",
+    "action": "spotifyplus.player_media_pause",
     "floorId": [],
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "media_player.spotify_graham"
-    ],
+    "entityId": [],
     "labelId": [],
     "data": "",
     "dataType": "jsonata",
@@ -240,10 +238,10 @@
     "outputProperties": [],
     "queue": "none",
     "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "media_pause",
-    "x": 740,
-    "y": 300,
+    "domain": "spotifyplus",
+    "service": "player_media_pause",
+    "x": 720,
+    "y": 280,
     "wires": [
       []
     ]
@@ -1247,7 +1245,7 @@
     "y": 400,
     "wires": [
       [
-        "e799f574aa0f4e4e"
+        "9f251ef9346d8bf8"
       ]
     ]
   },
@@ -1425,6 +1423,93 @@
     "wires": [
       [
         "0061f011adfc7afd"
+      ]
+    ]
+  },
+  {
+    "id": "9f251ef9346d8bf8",
+    "type": "api-call-service",
+    "z": "2aac704b012aedce",
+    "name": "Turn off Purple 2",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "switch.turn_off",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [
+      "ab9f04ce4f3120b03559f512ca8e6f55"
+    ],
+    "entityId": [],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "x": 300,
+    "y": 300,
+    "wires": [
+      [
+        "665575ccae3cb9e8"
+      ]
+    ]
+  },
+  {
+    "id": "665575ccae3cb9e8",
+    "type": "delay",
+    "z": "2aac704b012aedce",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "500",
+    "timeoutUnits": "milliseconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 330,
+    "y": 360,
+    "wires": [
+      [
+        "e799f574aa0f4e4e"
+      ]
+    ]
+  },
+  {
+    "id": "8389a6876899116c",
+    "type": "inject",
+    "z": "2aac704b012aedce",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 220,
+    "y": 680,
+    "wires": [
+      [
+        "409714f28242bf20"
       ]
     ]
   }
