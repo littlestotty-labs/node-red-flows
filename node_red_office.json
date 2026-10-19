@@ -623,7 +623,7 @@
     "halt_if_type": "num",
     "halt_if_compare": "gt",
     "entity_id": "sensor.plug_purple_2_power",
-    "state_type": "num",
+    "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [
       {
@@ -737,7 +737,7 @@
     "name": "Coffee Power",
     "server": "178754b9.fedf4b",
     "version": 6,
-    "outputs": 1,
+    "outputs": 2,
     "exposeAsEntityConfig": "",
     "entities": {
       "entity": [
@@ -747,8 +747,8 @@
       "regex": []
     },
     "outputInitially": false,
-    "stateType": "num",
-    "ifState": "",
+    "stateType": "str",
+    "ifState": "10",
     "ifStateType": "num",
     "ifStateOperator": "gt",
     "outputOnlyOnStateChange": true,
@@ -785,7 +785,8 @@
     "wires": [
       [
         "98e88e9919b57555"
-      ]
+      ],
+      []
     ]
   },
   {

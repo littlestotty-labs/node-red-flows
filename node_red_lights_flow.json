@@ -441,8 +441,8 @@
     "z": "69bd1d9289305324",
     "name": "link in 1",
     "links": [
-      "6312d592f2881d3b",
-      "d391f99c0ee88cfa"
+      "2b26571c7560a921",
+      "ae6cf53f3e1302a3"
     ],
     "x": 55,
     "y": 1280,
@@ -458,7 +458,8 @@
     "z": "69bd1d9289305324",
     "name": "link in 2",
     "links": [
-      "eca414ace8ea28ac"
+      "eca414ace8ea28ac",
+      "d2231822c9d0408f"
     ],
     "x": 55,
     "y": 1340,
@@ -474,13 +475,16 @@
     "z": "69bd1d9289305324",
     "name": "link in 3",
     "links": [
-      "0bb4bc41c415d6ab"
+      "f314114775774196",
+      "9b3de74389814295",
+      "f69ab63126914da5"
     ],
     "x": 55,
     "y": 1400,
     "wires": [
       [
-        "ca6183966f32945f"
+        "ca6183966f32945f",
+        "d0fb3844183b9c4d"
       ]
     ]
   },
@@ -490,7 +494,7 @@
     "z": "69bd1d9289305324",
     "name": "link in 4",
     "links": [
-      "bdeeb9acc618d84c"
+      "c2a08ab125c84c63"
     ],
     "x": 55,
     "y": 1480,
@@ -619,8 +623,8 @@
         "type": "num"
       }
     ],
-    "x": 180,
-    "y": 1400,
+    "x": 280,
+    "y": 1380,
     "wires": []
   },
   {
@@ -649,7 +653,8 @@
     "z": "69bd1d9289305324",
     "name": "link in 5",
     "links": [
-      "a254ed6de375b68a"
+      "a254ed6de375b68a",
+      "767601a86b0944b3"
     ],
     "x": 55,
     "y": 1840,
@@ -3507,7 +3512,7 @@
     "id": "3ecae55af9af742a",
     "type": "api-call-service",
     "z": "69bd1d9289305324",
-    "name": "",
+    "name": "100%",
     "server": "178754b9.fedf4b",
     "version": 7,
     "debugenabled": false,
@@ -3530,7 +3535,7 @@
     "service": "turn_on",
     "output_location": "",
     "output_location_type": "none",
-    "x": 310,
+    "x": 290,
     "y": 1480,
     "wires": [
       []
@@ -3583,7 +3588,7 @@
     "exposeAsEntityConfig": "",
     "entities": {
       "entity": [
-        "outdoorlightlock_switch"
+        "input_boolean.outdoorlightlock_switch"
       ],
       "substring": [],
       "regex": []
@@ -4037,6 +4042,23 @@
     ],
     "x": 487,
     "y": 3328,
+    "wires": []
+  },
+  {
+    "id": "d0fb3844183b9c4d",
+    "type": "debug",
+    "z": "69bd1d9289305324",
+    "name": "light 60",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 400,
+    "y": 1420,
     "wires": []
   }
 ]

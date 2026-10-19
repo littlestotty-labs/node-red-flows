@@ -12,6 +12,9 @@
         "wires": [
           {
             "id": "4fb062407d58b58d"
+          },
+          {
+            "id": "a1b3f328ab101846"
           }
         ]
       }
@@ -98,6 +101,45 @@
     "icon": "node-red/light.svg"
   },
   {
+    "id": "9af770c5fd6e4c63",
+    "type": "subflow",
+    "name": "TV Bring-up",
+    "info": "Parameterised TV/soundbar bring-up (movie & Wii share the logic).\n\nenv:\n- `tv_source` — LG webOS source name (Streaming Box / WII)\n- `sound_mode` — soundbar profile (Standard / Bass Blast)\n- `sound_volume` — volume (0.4 / 0.2)\n\nSets `tv_auto_on` on entry, clears it after source select, so the untouched TV-polling section behaves exactly as with the live flow. First internal node reads env into msg via env.get() (same idiom as the Light On subflow), service data uses {{mustache}}.",
+    "category": "home_assistant entities",
+    "in": [
+      {
+        "x": 60,
+        "y": 110,
+        "wires": [
+          {
+            "id": "afbef9bedd704a9d"
+          }
+        ]
+      }
+    ],
+    "out": [],
+    "env": [
+      {
+        "name": "tv_source",
+        "type": "str",
+        "value": "Streaming Box"
+      },
+      {
+        "name": "sound_mode",
+        "type": "str",
+        "value": "Standard"
+      },
+      {
+        "name": "sound_volume",
+        "type": "str",
+        "value": "0.4"
+      }
+    ],
+    "meta": {},
+    "color": "#D8E8D8",
+    "icon": "node-red/light.svg"
+  },
+  {
     "id": "1f0c95ab403f2eb0",
     "type": "api-current-state",
     "z": "6bdafdf417110693",
@@ -109,7 +151,7 @@
     "halt_if_type": "num",
     "halt_if_compare": "lte",
     "entity_id": "sensor.luxsensor_illuminance",
-    "state_type": "num",
+    "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [
       {
@@ -281,7 +323,7 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 240,
+    "x": 500,
     "y": 80,
     "wires": [
       [
@@ -308,7 +350,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 420,
+    "x": 680,
     "y": 80,
     "wires": [
       [
@@ -335,7 +377,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 620,
+    "x": 880,
     "y": 80,
     "wires": [
       [
@@ -379,7 +421,7 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 790,
+    "x": 1050,
     "y": 80,
     "wires": [
       [],
@@ -422,10 +464,10 @@
     ]
   },
   {
-    "id": "93b527c676d0ec89",
+    "id": "a1b3f328ab101846",
     "type": "debug",
     "z": "6bdafdf417110693",
-    "name": "debug 2",
+    "name": "Light on requested ",
     "active": true,
     "tosidebar": true,
     "console": false,
@@ -434,8 +476,8 @@
     "targetType": "full",
     "statusVal": "",
     "statusType": "auto",
-    "x": 680,
-    "y": 460,
+    "x": 190,
+    "y": 420,
     "wires": []
   },
   {
@@ -537,7 +579,7 @@
     "halt_if_type": "bool",
     "halt_if_compare": "is_not",
     "entity_id": "input_boolean.lights_manual",
-    "state_type": "habool",
+    "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [
       {
@@ -785,6 +827,308 @@
       [
         "418c480b1ba00d01"
       ]
+    ]
+  },
+  {
+    "id": "afbef9bedd704a9d",
+    "type": "function",
+    "z": "9af770c5fd6e4c63",
+    "name": "Read TV params (env)",
+    "func": "// read subflow env into msg (same idiom as the Light On subflow)\nmsg.tvSource = env.get(\"tv_source\");\nmsg.soundMode = env.get(\"sound_mode\");\nmsg.soundVolume = env.get(\"sound_volume\");\nreturn msg;\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 200,
+    "y": 120,
+    "wires": [
+      [
+        "bedaa65333c849b7"
+      ]
+    ]
+  },
+  {
+    "id": "bedaa65333c849b7",
+    "type": "api-call-service",
+    "z": "9af770c5fd6e4c63",
+    "name": "Flag tv coming on",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "input_boolean.turn_on",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_boolean.tv_auto_on"
+    ],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "input_boolean",
+    "service": "turn_on",
+    "x": 310,
+    "y": 220,
+    "wires": [
+      [
+        "c6d6e448e8fb4c23",
+        "2628f105cda340a9"
+      ]
+    ]
+  },
+  {
+    "id": "f54b3f224a1f44ff",
+    "type": "wake on lan",
+    "z": "9af770c5fd6e4c63",
+    "mac": "74-40-BE-9B-A8-E0",
+    "host": "10.0.0.127",
+    "udpport": 9,
+    "numpackets": 3,
+    "interval": 100,
+    "name": "WOL TV",
+    "x": 400,
+    "y": 320,
+    "wires": []
+  },
+  {
+    "id": "2628f105cda340a9",
+    "type": "api-call-service",
+    "z": "9af770c5fd6e4c63",
+    "name": "Turn on Shield",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "media_player.turn_on",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "media_player.android_tv_10_0_0_26"
+    ],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "media_player",
+    "service": "turn_on",
+    "x": 640,
+    "y": 200,
+    "wires": [
+      [
+        "95c19cf9f2764c8c"
+      ]
+    ]
+  },
+  {
+    "id": "95c19cf9f2764c8c",
+    "type": "ha-wait-until",
+    "z": "9af770c5fd6e4c63",
+    "name": "Wait until TV on",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "entities": {
+      "entity": [
+        "media_player.lg_webos_smart_tv"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "property": "state",
+    "comparator": "is",
+    "value": "on",
+    "valueType": "str",
+    "timeout": "12",
+    "timeoutType": "num",
+    "timeoutUnits": "seconds",
+    "checkCurrentState": true,
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "Passed",
+        "valueType": "str"
+      }
+    ],
+    "x": 880,
+    "y": 200,
+    "wires": [
+      [
+        "b91115390b05444d"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "b91115390b05444d",
+    "type": "api-call-service",
+    "z": "9af770c5fd6e4c63",
+    "name": "Select LG source (env)",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "media_player.select_source",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "media_player.lg_webos_smart_tv"
+    ],
+    "labelId": [],
+    "data": "{\"source\":\"{{tvSource}}\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "media_player",
+    "service": "select_source",
+    "x": 1100,
+    "y": 200,
+    "wires": [
+      [
+        "8fc4d63a5a3b4972"
+      ]
+    ]
+  },
+  {
+    "id": "8fc4d63a5a3b4972",
+    "type": "api-call-service",
+    "z": "9af770c5fd6e4c63",
+    "name": "Flag tv off",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "input_boolean.turn_off",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_boolean.tv_auto_on"
+    ],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "input_boolean",
+    "service": "turn_off",
+    "x": 1300,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c6d6e448e8fb4c23",
+    "type": "api-call-service",
+    "z": "9af770c5fd6e4c63",
+    "name": "Soundbar source ARC",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "media_player.select_source",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [
+      "f944c8c1faf7cc3350666074b0b53ae8"
+    ],
+    "entityId": [],
+    "labelId": [],
+    "data": "{\"source\":\"Optical/HDMI ARC\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "media_player",
+    "service": "select_source",
+    "x": 660,
+    "y": 280,
+    "wires": [
+      [
+        "79ae96a53319477a"
+      ]
+    ]
+  },
+  {
+    "id": "79ae96a53319477a",
+    "type": "api-call-service",
+    "z": "9af770c5fd6e4c63",
+    "name": "Soundbar profile (env)",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "media_player.select_sound_mode",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [
+      "f944c8c1faf7cc3350666074b0b53ae8"
+    ],
+    "entityId": [],
+    "labelId": [],
+    "data": "{\"sound_mode\":\"{{soundMode}}\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "media_player",
+    "service": "select_sound_mode",
+    "x": 900,
+    "y": 280,
+    "wires": [
+      [
+        "361b720b97de4da3"
+      ]
+    ]
+  },
+  {
+    "id": "361b720b97de4da3",
+    "type": "api-call-service",
+    "z": "9af770c5fd6e4c63",
+    "name": "Soundbar volume (env)",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "media_player.volume_set",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [
+      "f944c8c1faf7cc3350666074b0b53ae8"
+    ],
+    "entityId": [],
+    "labelId": [],
+    "data": "{\"volume_level\":\"{{soundVolume}}\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "media_player",
+    "service": "volume_set",
+    "x": 1150,
+    "y": 280,
+    "wires": [
+      []
     ]
   }
 ]
