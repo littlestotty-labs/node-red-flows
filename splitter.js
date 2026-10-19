@@ -34,6 +34,10 @@ for (const tab of tabs) {
   fs.writeFileSync(path.join(OUT, fname), JSON.stringify(group, null, 2));
 }
 
+// Subflows need no TAB_FILES entry: every type === "subflow" definition plus
+// its internal nodes (z === subflow id) is collected here — Light On,
+// Light Off (1) and TV Bring-up, plus any future subflow. Subflow *instances*
+// are covered by their tab's export. The file name below is historical.
 const subGroup = [...subs];
 for (const s of subs) {
   subGroup.push(...nodes.filter((n) => n.z === s.id));
@@ -43,5 +47,7 @@ fs.writeFileSync(path.join(OUT, "node_red_lights_sub_flow.json"), JSON.stringify
 fs.writeFileSync(path.join(OUT, "node_red_all_flows.json"), JSON.stringify(nodes, null, 2));
 
 console.log(
-  `splitter: exported ${tabs.length} tabs + ${subs.length} subflows + full copy to ${OUT}`
+  `splitter: exported ${tabs.length} tabs + subflows [${subs
+    .map((s) => s.name)
+    .join(", ")}] + full copy to ${OUT}`
 );

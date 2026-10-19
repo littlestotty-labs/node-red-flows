@@ -883,20 +883,6 @@
     ]
   },
   {
-    "id": "f54b3f224a1f44ff",
-    "type": "wake on lan",
-    "z": "9af770c5fd6e4c63",
-    "mac": "74-40-BE-9B-A8-E0",
-    "host": "10.0.0.127",
-    "udpport": 9,
-    "numpackets": 3,
-    "interval": 100,
-    "name": "WOL TV",
-    "x": 400,
-    "y": 320,
-    "wires": []
-  },
-  {
     "id": "2628f105cda340a9",
     "type": "api-call-service",
     "z": "9af770c5fd6e4c63",

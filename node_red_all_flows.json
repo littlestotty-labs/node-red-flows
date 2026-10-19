@@ -1,13 +1,5 @@
 [
   {
-    "id": "1c33f591480337db",
-    "type": "tab",
-    "label": "Lounge _ original",
-    "disabled": true,
-    "info": "",
-    "env": []
-  },
-  {
     "id": "2aac704b012aedce",
     "type": "tab",
     "label": "Office",
@@ -969,20 +961,6 @@
     ]
   },
   {
-    "id": "f54b3f224a1f44ff",
-    "type": "wake on lan",
-    "z": "9af770c5fd6e4c63",
-    "mac": "74-40-BE-9B-A8-E0",
-    "host": "10.0.0.127",
-    "udpport": 9,
-    "numpackets": 3,
-    "interval": 100,
-    "name": "WOL TV",
-    "x": 400,
-    "y": 320,
-    "wires": []
-  },
-  {
     "id": "2628f105cda340a9",
     "type": "api-call-service",
     "z": "9af770c5fd6e4c63",
@@ -1216,4900 +1194,6 @@
     "wires": [
       []
     ]
-  },
-  {
-    "id": "43efbd79a08f9168",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "TV Polling",
-    "info": "",
-    "x": 160.54861450195312,
-    "y": 34,
-    "wires": []
-  },
-  {
-    "id": "fd8fda719cd65084",
-    "type": "poll-state",
-    "z": "1c33f591480337db",
-    "name": "Poll Shield Box",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "exposeAsEntityConfig": "",
-    "updateInterval": "2",
-    "updateIntervalType": "num",
-    "updateIntervalUnits": "seconds",
-    "outputInitially": false,
-    "outputOnChanged": false,
-    "entityId": "media_player.android_tv_10_0_0_26",
-    "stateType": "str",
-    "ifState": "",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputs": 1,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 180,
-    "y": 80,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "2b45897efc115ee4",
-    "type": "poll-state",
-    "z": "1c33f591480337db",
-    "name": "Poll Kodi Server",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "exposeAsEntityConfig": "",
-    "updateInterval": "2",
-    "updateIntervalType": "num",
-    "updateIntervalUnits": "seconds",
-    "outputInitially": false,
-    "outputOnChanged": false,
-    "entityId": "media_player.android_tv_10_0_0_26",
-    "stateType": "str",
-    "ifState": "",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputs": 1,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 360,
-    "y": 80,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "236a7286bff8976d",
-    "type": "poll-state",
-    "z": "1c33f591480337db",
-    "name": "Poll LG TV",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "exposeAsEntityConfig": "",
-    "updateInterval": "2",
-    "updateIntervalType": "num",
-    "updateIntervalUnits": "seconds",
-    "outputInitially": false,
-    "outputOnChanged": false,
-    "entityId": "media_player.lg_webos_smart_tv",
-    "stateType": "str",
-    "ifState": "",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputs": 1,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 520,
-    "y": 80,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "9c2e6d76e073b8a3",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Kodi Playing",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "media_player.emby_kodi_10_0_0_26_4"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "playing",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 170,
-    "y": 206,
-    "wires": [
-      [
-        "c4e18a03a6402efe"
-      ],
-      [
-        "8a77429a4d5a0251"
-      ]
-    ]
-  },
-  {
-    "id": "1a865d1060e43b7a",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Shield Playing",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "media_player.android_tv_10_0_0_26"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "playing",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 170,
-    "y": 260,
-    "wires": [
-      [
-        "d7c361914f9f9762"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "fd7e4a58b0f49481",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Kdi Playing?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "playing",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "media_player.android_tv_10_0_0_26",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 689.4513854980469,
-    "y": 280,
-    "wires": [
-      [
-        "85e1c9616f54a54e"
-      ],
-      [
-        "969b38845ce0db34"
-      ]
-    ]
-  },
-  {
-    "id": "969b38845ce0db34",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Netflix?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "Netflix",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "sensor.shield_source",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 879.4513854980469,
-    "y": 300,
-    "wires": [
-      [
-        "85e1c9616f54a54e"
-      ],
-      [
-        "f9569c5b581670d5"
-      ]
-    ]
-  },
-  {
-    "id": "556040396eccfe66",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Netflix?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "Netflix",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "sensor.shield_source",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 679.4513854980469,
-    "y": 220,
-    "wires": [
-      [
-        "85e1c9616f54a54e"
-      ],
-      [
-        "4f66bf97350658ba"
-      ]
-    ]
-  },
-  {
-    "id": "85e1c9616f54a54e",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Turn off Lounge Light ",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "light.turn_on",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "5b8d41b06281b7c03b4f07ee89fc0965"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"entity_id\":\"light.lounge_light\",\"brightness_pct\":0,\"transition\":5}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "light",
-    "service": "turn_on",
-    "x": 1160,
-    "y": 180,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "4f66bf97350658ba",
-    "type": "link out",
-    "z": "1c33f591480337db",
-    "name": "Lights Low",
-    "mode": "link",
-    "links": [
-      "733ebaa1883876cb"
-    ],
-    "x": 1075,
-    "y": 240,
-    "wires": []
-  },
-  {
-    "id": "f9569c5b581670d5",
-    "type": "link out",
-    "z": "1c33f591480337db",
-    "name": "Lights Low",
-    "mode": "link",
-    "links": [],
-    "x": 1075,
-    "y": 300,
-    "wires": []
-  },
-  {
-    "id": "9401b35027d3e698",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Light Low",
-    "info": "",
-    "x": 1160,
-    "y": 300,
-    "wires": []
-  },
-  {
-    "id": "07a0d5d11ca4a50f",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Light Low",
-    "info": "",
-    "x": 1180,
-    "y": 240,
-    "wires": []
-  },
-  {
-    "id": "ba4a25bd7d3fa87e",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Movie Playing",
-    "info": "",
-    "x": 170,
-    "y": 160,
-    "wires": []
-  },
-  {
-    "id": "043da1e27c0c76ea",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Light Off",
-    "info": "",
-    "x": 1340,
-    "y": 180,
-    "wires": []
-  },
-  {
-    "id": "183aeadc152f7be8",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "**** Turn off scene flags ********************",
-    "info": "",
-    "x": 260,
-    "y": 420,
-    "wires": []
-  },
-  {
-    "id": "8316f50ecb93a3f0",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "turn off whatsapp",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.whatsapp_switch"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_off",
-    "x": 890,
-    "y": 480,
-    "wires": [
-      [
-        "0866188114901603"
-      ]
-    ]
-  },
-  {
-    "id": "e72d2fa8b67d6395",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "turn off reading",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.reading_switch"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_off",
-    "x": 880,
-    "y": 540,
-    "wires": [
-      [
-        "0866188114901603"
-      ]
-    ]
-  },
-  {
-    "id": "267bad76634fcad1",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "turn off movie",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.movie_switch"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_off",
-    "x": 880,
-    "y": 720,
-    "wires": [
-      [
-        "0866188114901603"
-      ]
-    ]
-  },
-  {
-    "id": "222dc1fc7705f60d",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "turn off wii",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.wii_switch"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_off",
-    "x": 870,
-    "y": 660,
-    "wires": [
-      [
-        "0866188114901603"
-      ]
-    ]
-  },
-  {
-    "id": "caff907d8b8df255",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "turn off chill",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.lounge_chill_switch"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_off",
-    "x": 870,
-    "y": 600,
-    "wires": [
-      [
-        "0866188114901603"
-      ]
-    ]
-  },
-  {
-    "id": "828ef79a8febd99c",
-    "type": "switch",
-    "z": "1c33f591480337db",
-    "name": "Turn Scenes Off",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "neq",
-        "v": "Whatsapp",
-        "vt": "str"
-      },
-      {
-        "t": "neq",
-        "v": "Reading",
-        "vt": "str"
-      },
-      {
-        "t": "neq",
-        "v": "Chill",
-        "vt": "str"
-      },
-      {
-        "t": "neq",
-        "v": "Wii",
-        "vt": "str"
-      },
-      {
-        "t": "neq",
-        "v": "Movie",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 5,
-    "x": 440,
-    "y": 600,
-    "wires": [
-      [
-        "15585b767b4fc4b2"
-      ],
-      [
-        "fb3b0bed2d63d7e6"
-      ],
-      [
-        "d29164b9d586c177"
-      ],
-      [
-        "207b9cf232836765"
-      ],
-      [
-        "40ade1ed53decf57"
-      ]
-    ]
-  },
-  {
-    "id": "40ade1ed53decf57",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Movie Scene",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.movie_switch",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 690,
-    "y": 720,
-    "wires": [
-      [
-        "267bad76634fcad1"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "207b9cf232836765",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Wii Scene",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.wii_switch",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 680,
-    "y": 660,
-    "wires": [
-      [
-        "222dc1fc7705f60d"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "15585b767b4fc4b2",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "whatsapp?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.whatsapp_switch",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 690,
-    "y": 480,
-    "wires": [
-      [
-        "8316f50ecb93a3f0"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "d29164b9d586c177",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Chill?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.lounge_chill_switch",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 670,
-    "y": 600,
-    "wires": [
-      [
-        "caff907d8b8df255"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "fb3b0bed2d63d7e6",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "reading?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.reading_switch",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 680,
-    "y": 540,
-    "wires": [
-      [
-        "e72d2fa8b67d6395"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "f5e8e0366b80084c",
-    "type": "poll-state",
-    "z": "1c33f591480337db",
-    "name": "Poll spotcast",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "exposeAsEntityConfig": "",
-    "updateInterval": "2",
-    "updateIntervalType": "num",
-    "updateIntervalUnits": "seconds",
-    "outputInitially": true,
-    "outputOnChanged": true,
-    "entityId": "media_player.living_room_speaker",
-    "stateType": "str",
-    "ifState": "",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputs": 1,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 670,
-    "y": 80,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "fab4bcd0c570e427",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Whatsapp Mode on?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.whatsapp_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Whatsapp",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 190,
-    "y": 460,
-    "wires": [
-      [
-        "828ef79a8febd99c"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "99ccfd2ebeb8a547",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Chill Mode on?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.lounge_chill_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Chill",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 180,
-    "y": 580,
-    "wires": [
-      [
-        "828ef79a8febd99c"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "c9597faebeef1160",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Wii Scene?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.wii_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Wii",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 170,
-    "y": 640,
-    "wires": [
-      [
-        "828ef79a8febd99c"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "c4e18a03a6402efe",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "TV Being turned on?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.tv_auto_on",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 479.4513854980469,
-    "y": 180,
-    "wires": [
-      [],
-      [
-        "85e1c9616f54a54e"
-      ]
-    ]
-  },
-  {
-    "id": "8a77429a4d5a0251",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "TV Being turned on?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.tv_auto_on",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 479.4513854980469,
-    "y": 240,
-    "wires": [
-      [],
-      [
-        "556040396eccfe66"
-      ]
-    ]
-  },
-  {
-    "id": "d7c361914f9f9762",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "TV Being turned on?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.tv_auto_on",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 479.4513854980469,
-    "y": 300,
-    "wires": [
-      [],
-      [
-        "fd7e4a58b0f49481"
-      ]
-    ]
-  },
-  {
-    "id": "683b9eb4dce9d842",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Movie Scene?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.movie_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Movie",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 170,
-    "y": 700,
-    "wires": [
-      [
-        "828ef79a8febd99c"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "eecd13b7199ee65a",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Whatsapp Mode on?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.whatsapp_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Whatsapp",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 190,
-    "y": 2240,
-    "wires": [
-      [
-        "491fbef3fbf1f29b",
-        "ce84b782d6fc5790"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "d72882b61a4bc2fb",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Chill Mode on?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.lounge_chill_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Chill",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 180,
-    "y": 2520,
-    "wires": [
-      [
-        "bc7165dc4121fbe0",
-        "664897646aacf0e8"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "0ec3e28011937996",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Wii Scene?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.wii_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "WII",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 130,
-    "y": 2760,
-    "wires": [
-      [
-        "ac91f27355d2a4b5",
-        "ef0d9b32adc3470c",
-        "dec5fd69d384ef7d",
-        "0f44e9a79a0de1b0"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "e96c569869a6a01f",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Reading Mode on?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.reading_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Reading",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 190,
-    "y": 2340,
-    "wires": [
-      [
-        "f56d95f00ba6a0e5",
-        "1d6c25c75065ac1f",
-        "fcb0afb69e221aa2"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "bb20db2c98aafa14",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Movie Scene?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.movie_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Movie",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 110,
-    "y": 3100,
-    "wires": [
-      [
-        "f837de7269c61dd6",
-        "1c04cf1b28c81038",
-        "1f6435ae444a3411",
-        "847ef9702d843e6d"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "9c32631673b971e8",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Light 100%",
-    "info": "",
-    "x": 420,
-    "y": 2240,
-    "wires": []
-  },
-  {
-    "id": "ef0d9b32adc3470c",
-    "type": "link out",
-    "z": "1c33f591480337db",
-    "name": "link out 30",
-    "mode": "link",
-    "links": [],
-    "x": 275,
-    "y": 2740,
-    "wires": []
-  },
-  {
-    "id": "7e0d2945cbfe1b20",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Light 60%",
-    "info": "",
-    "x": 360,
-    "y": 2740,
-    "wires": []
-  },
-  {
-    "id": "be446d907293d27d",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Light 60%",
-    "info": "",
-    "x": 400,
-    "y": 2520,
-    "wires": []
-  },
-  {
-    "id": "f837de7269c61dd6",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Flag tv coming on",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_on",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.tv_auto_on"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_on",
-    "x": 350,
-    "y": 3140,
-    "wires": [
-      [
-        "c1a443f6394b16aa",
-        "2ed39853ab315a97"
-      ]
-    ]
-  },
-  {
-    "id": "1c04cf1b28c81038",
-    "type": "link out",
-    "z": "1c33f591480337db",
-    "name": "Lights Low",
-    "mode": "link",
-    "links": [],
-    "x": 265,
-    "y": 3080,
-    "wires": []
-  },
-  {
-    "id": "0c1c8aedca1f48e1",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Light Low",
-    "info": "",
-    "x": 360,
-    "y": 3080,
-    "wires": []
-  },
-  {
-    "id": "97c1df7e2795d58d",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Spotify Dawn",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "spotcast.start",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"account\":\"dawn\",\"uri\":\"spotify:playlist:1y7TvGcFLbj0vxOLeBCh4y?si=82e04d18864f4979&nd=1&dlsi=f284b4b105234d60\",\"force_playback\":\"true\",\"random_song\":\"true\",\"shuffle\":\"true\",\"offset\":\"0\",\"ignore_fully_played\":\"false\",\"entity_id\":\"media_player.living_room_speaker\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "spotcast",
-    "service": "start",
-    "x": 1430,
-    "y": 2460,
-    "wires": [
-      [
-        "989feb52dc022ba1"
-      ]
-    ]
-  },
-  {
-    "id": "dfd7b6b621df9258",
-    "type": "switch",
-    "z": "1c33f591480337db",
-    "name": "Which User?",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "Graham",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Dawn",
-        "vt": "str"
-      }
-    ],
-    "checkall": "false",
-    "repair": false,
-    "outputs": 2,
-    "x": 1070,
-    "y": 2420,
-    "wires": [
-      [
-        "886e315850d003e2"
-      ],
-      [
-        "97c1df7e2795d58d"
-      ]
-    ]
-  },
-  {
-    "id": "784e39cc40dd1406",
-    "type": "change",
-    "z": "1c33f591480337db",
-    "name": "Lookup user from ID",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "$merge(payload.{attributes.user_id: attributes.friendly_name})~>$lookup(user)",
-        "tot": "jsonata"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 880,
-    "y": 2420,
-    "wires": [
-      [
-        "dfd7b6b621df9258"
-      ]
-    ]
-  },
-  {
-    "id": "4497f35c8a64a49e",
-    "type": "ha-get-entities",
-    "z": "1c33f591480337db",
-    "name": "All users",
-    "server": "178754b9.fedf4b",
-    "version": 1,
-    "rules": [
-      {
-        "property": "attributes.user_id",
-        "logic": "is_not",
-        "value": "null",
-        "valueType": "jsonata"
-      }
-    ],
-    "outputType": "array",
-    "outputEmptyResults": true,
-    "outputLocationType": "msg",
-    "outputLocation": "payload",
-    "outputResultsCount": 1,
-    "x": 700,
-    "y": 2420,
-    "wires": [
-      [
-        "784e39cc40dd1406"
-      ]
-    ]
-  },
-  {
-    "id": "ebcfb2bdcf51ee3d",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Light 60%",
-    "info": "",
-    "x": 400,
-    "y": 2420,
-    "wires": []
-  },
-  {
-    "id": "b66b727b4d322e7a",
-    "type": "change",
-    "z": "1c33f591480337db",
-    "name": "tag name",
-    "rules": [
-      {
-        "t": "set",
-        "p": "user",
-        "pt": "msg",
-        "to": "data.new_state.context.user_id",
-        "tot": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 560,
-    "y": 2420,
-    "wires": [
-      [
-        "4497f35c8a64a49e"
-      ]
-    ]
-  },
-  {
-    "id": "6cf9795b8ff522be",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Turn off shield",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "homeassistant.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "5acb3b13a5fb9947619cf2cd04a6f19f"
-    ],
-    "entityId": [
-      "media_player.lg_webos_smart_tv"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "homeassistant",
-    "service": "turn_off",
-    "x": 740,
-    "y": 2340,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "ab8f3c30f93be17a",
-    "type": "eztimer",
-    "z": "1c33f591480337db",
-    "name": "",
-    "debug": false,
-    "autoname": "00:06:00",
-    "tag": "eztimer",
-    "topic": "",
-    "suspended": false,
-    "sendEventsOnSuspend": false,
-    "latLongSource": "haZone",
-    "latLongHaZone": "zone.home",
-    "lat": "-33.796386",
-    "lon": "151.112123",
-    "timerType": "2",
-    "startupMessage": false,
-    "ontype": "2",
-    "ontimesun": "dawn",
-    "ontimetod": "00:06:00",
-    "onpropertytype": "msg",
-    "onproperty": "payload",
-    "onvaluetype": "str",
-    "onvalue": "midnight_check",
-    "onoffset": 0,
-    "onrandomoffset": 0,
-    "onsuppressrepeats": false,
-    "offtype": "3",
-    "offtimesun": "dusk",
-    "offtimetod": "dusk",
-    "offduration": "00:01:00",
-    "offpropertytype": "msg",
-    "offproperty": "payload",
-    "offvaluetype": "num",
-    "offvalue": 0,
-    "offoffset": 0,
-    "offrandomoffset": 0,
-    "offsuppressrepeats": false,
-    "resend": false,
-    "resendInterval": "0s",
-    "mon": true,
-    "tue": true,
-    "wed": true,
-    "thu": true,
-    "fri": true,
-    "sat": true,
-    "sun": true,
-    "x": 160,
-    "y": 800,
-    "wires": [
-      [
-        "828ef79a8febd99c",
-        "097ad3a1163156c2",
-        "de628fa7b57748c5"
-      ]
-    ]
-  },
-  {
-    "id": "e26a88c7a2c8d5e6",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "midnight check",
-    "info": "",
-    "x": 180,
-    "y": 760,
-    "wires": []
-  },
-  {
-    "id": "097ad3a1163156c2",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Turn off all Lights",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "light.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "all"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "light",
-    "service": "turn_off",
-    "x": 410,
-    "y": 820,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "886e315850d003e2",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Spotify Graham",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "spotifyplus.player_media_play_context",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"entity_id\":\"media_player.spotifyplus_graham\",\"device_id\":\"Living room speaker\",\"context_uri\":\"spotify:playlist:37i9dQZF1EIZ0V0T7oWUAc?si=d5e1ddb3c6e044cd\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "spotifyplus",
-    "service": "player_media_play_context",
-    "x": 1420,
-    "y": 2400,
-    "wires": [
-      [
-        "989feb52dc022ba1"
-      ]
-    ]
-  },
-  {
-    "id": "ac91f27355d2a4b5",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Flag tv coming on",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_on",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.tv_auto_on"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_on",
-    "x": 350,
-    "y": 2800,
-    "wires": [
-      [
-        "0c45dee3d9bc1c52",
-        "973485a93f0e9ed0"
-      ]
-    ]
-  },
-  {
-    "id": "f4e1ffe03f6e5fbe",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Flag tv off",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.tv_auto_on"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_off",
-    "x": 1320,
-    "y": 2800,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "97ed93517116b27e",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Switch to WII",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.select_source",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "media_player.lg_webos_smart_tv"
-    ],
-    "labelId": [],
-    "data": "{\"source\":\"WII\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "select_source",
-    "x": 1130,
-    "y": 2800,
-    "wires": [
-      [
-        "f4e1ffe03f6e5fbe"
-      ]
-    ]
-  },
-  {
-    "id": "17b4a035b0f1995f",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Turn on Scenes - WHATSAPP",
-    "info": "",
-    "x": 220,
-    "y": 2200,
-    "wires": []
-  },
-  {
-    "id": "eb2886d9bd45f172",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Turn on Scenes - READING",
-    "info": "",
-    "x": 220,
-    "y": 2300,
-    "wires": []
-  },
-  {
-    "id": "554dc167052b758a",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Turn on Scenes - CHILL",
-    "info": "",
-    "x": 200,
-    "y": 2480,
-    "wires": []
-  },
-  {
-    "id": "a4cca9de7a654436",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Turn on Scenes - WII",
-    "info": "",
-    "x": 160,
-    "y": 2640,
-    "wires": []
-  },
-  {
-    "id": "cdf82787d3fad90f",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Turn on Scenes - MOVIE",
-    "info": "",
-    "x": 150,
-    "y": 2980,
-    "wires": []
-  },
-  {
-    "id": "c1a443f6394b16aa",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Shield off?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "off,standby,idle,unavailable",
-    "halt_if_type": "str",
-    "halt_if_compare": "includes",
-    "entity_id": "media_player.android_tv_10_0_0_26",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 550,
-    "y": 3140,
-    "wires": [
-      [
-        "7fc980f08e3b81c0"
-      ],
-      [
-        "a979415edc2afc3c"
-      ]
-    ]
-  },
-  {
-    "id": "7fc980f08e3b81c0",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Turn on Shield",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.turn_on",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "media_player.android_tv_10_0_0_26"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "turn_on",
-    "x": 740,
-    "y": 3100,
-    "wires": [
-      [
-        "a979415edc2afc3c"
-      ]
-    ]
-  },
-  {
-    "id": "f56d95f00ba6a0e5",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Flag tv coming on",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_on",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.tv_auto_on"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_on",
-    "x": 390,
-    "y": 2340,
-    "wires": [
-      [
-        "76111a993d87d5ec",
-        "b66b727b4d322e7a",
-        "f7d59e963e29f582"
-      ]
-    ]
-  },
-  {
-    "id": "989feb52dc022ba1",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Flag tv off",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.tv_auto_on"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_off",
-    "x": 1600,
-    "y": 2420,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "df38b0393de73169",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "**** Check for nothing on ********************",
-    "info": "",
-    "x": 260,
-    "y": 900,
-    "wires": []
-  },
-  {
-    "id": "ff82af0884e00b90",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Whatsapp Mode on?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.whatsapp_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Whatsapp",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 190,
-    "y": 940,
-    "wires": [
-      [],
-      [
-        "a360e5fc4cca9ca4"
-      ]
-    ]
-  },
-  {
-    "id": "8d9eb5d016c907cd",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Chill Mode on?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.lounge_chill_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Chill",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 180,
-    "y": 1060,
-    "wires": [
-      [],
-      [
-        "a360e5fc4cca9ca4"
-      ]
-    ]
-  },
-  {
-    "id": "1cd81aaacee0345f",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Wii Scene?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.wii_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Wii",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 170,
-    "y": 1120,
-    "wires": [
-      [],
-      [
-        "a360e5fc4cca9ca4"
-      ]
-    ]
-  },
-  {
-    "id": "7b3b779f423ca9e3",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Reading Mode on?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.reading_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Reading",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 190,
-    "y": 1000,
-    "wires": [
-      [],
-      [
-        "a360e5fc4cca9ca4"
-      ]
-    ]
-  },
-  {
-    "id": "b9b07a806c23a053",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Movie Scene?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.movie_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Movie",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 170,
-    "y": 1180,
-    "wires": [
-      [],
-      [
-        "a360e5fc4cca9ca4"
-      ]
-    ]
-  },
-  {
-    "id": "0db14b5c5126816f",
-    "type": "link out",
-    "z": "1c33f591480337db",
-    "name": "link out 10",
-    "mode": "link",
-    "links": [],
-    "x": 695,
-    "y": 1080,
-    "wires": []
-  },
-  {
-    "id": "bb649de80be23775",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Reset Room Lights",
-    "info": "",
-    "x": 810,
-    "y": 1080,
-    "wires": []
-  },
-  {
-    "id": "4c8a5d6d7af85fd0",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "**** Turn off scene ********************",
-    "info": "",
-    "x": 240,
-    "y": 1260,
-    "wires": []
-  },
-  {
-    "id": "3193a4cf124c7e9d",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Wii Scene",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.wii_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Wii",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 160,
-    "y": 1420,
-    "wires": [
-      [],
-      [
-        "36522b3c10215e8b"
-      ]
-    ]
-  },
-  {
-    "id": "a25c47e449359363",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Reading Mode ",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.reading_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Reading",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 180,
-    "y": 1360,
-    "wires": [
-      [],
-      [
-        "166b94068376566d"
-      ]
-    ]
-  },
-  {
-    "id": "e3b2e9e40169215b",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Movie Scene",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.movie_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Movie",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 170,
-    "y": 1480,
-    "wires": [
-      [],
-      [
-        "781203a4f19494e1"
-      ]
-    ]
-  },
-  {
-    "id": "47b88da31349ca0e",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Nothing to do for this, light resets",
-    "info": "",
-    "x": 490,
-    "y": 1300,
-    "wires": []
-  },
-  {
-    "id": "166b94068376566d",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Soundbar Playing?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "playing",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "media_player.living_room_speaker",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 430,
-    "y": 1360,
-    "wires": [
-      [
-        "b157f5e01496f631"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "b157f5e01496f631",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "7b06512acf7a8f0c71d7d9d2272bed8d"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "turn_off",
-    "x": 640,
-    "y": 1360,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "36522b3c10215e8b",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Movie Scene",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.movie_switch",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 410,
-    "y": 1420,
-    "wires": [
-      [],
-      [
-        "d0c6a83c869d0b29"
-      ]
-    ]
-  },
-  {
-    "id": "781203a4f19494e1",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Wii Scene",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.wii_switch",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 400,
-    "y": 1480,
-    "wires": [
-      [],
-      [
-        "d0c6a83c869d0b29"
-      ]
-    ]
-  },
-  {
-    "id": "f8e898eaa5c7aa52",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Shield not off?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "media_player.android_tv_10_0_0_26",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 820,
-    "y": 1420,
-    "wires": [
-      [
-        "10eb0bc213fa9efc"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "10eb0bc213fa9efc",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Turn off Shield",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": true,
-    "action": "homeassistant.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "5acb3b13a5fb9947619cf2cd04a6f19f"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "homeassistant",
-    "service": "turn_off",
-    "x": 1040,
-    "y": 1420,
-    "wires": [
-      [
-        "10f3c03eebd99da0"
-      ]
-    ]
-  },
-  {
-    "id": "d2398f5dcfc2d2e9",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Whatsapp",
-    "info": "",
-    "x": 160,
-    "y": 1300,
-    "wires": []
-  },
-  {
-    "id": "923dc21f098c1429",
-    "type": "comment",
-    "z": "1c33f591480337db",
-    "name": "Chill Mode",
-    "info": "",
-    "x": 280,
-    "y": 1300,
-    "wires": []
-  },
-  {
-    "id": "d0c6a83c869d0b29",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Flag tv coming on",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_on",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.tv_auto_on"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_on",
-    "x": 610,
-    "y": 1460,
-    "wires": [
-      [
-        "10f3c03eebd99da0",
-        "6744446189951aea"
-      ]
-    ]
-  },
-  {
-    "id": "10f3c03eebd99da0",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Flag tv off",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.tv_auto_on"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_off",
-    "x": 1200,
-    "y": 1460,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "76111a993d87d5ec",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Shield off?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "off,standby",
-    "halt_if_type": "str",
-    "halt_if_compare": "includes",
-    "entity_id": "media_player.android_tv_10_0_0_26",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 570,
-    "y": 2340,
-    "wires": [
-      [],
-      [
-        "6cf9795b8ff522be"
-      ]
-    ]
-  },
-  {
-    "id": "068d9fb26226381b",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Turn off TV",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "homeassistant.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "7e934c129b97cd67e9af0af232073181"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "homeassistant",
-    "service": "turn_off",
-    "x": 1050,
-    "y": 1540,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "6744446189951aea",
-    "type": "delay",
-    "z": "1c33f591480337db",
-    "name": "",
-    "pauseType": "delay",
-    "timeout": "2",
-    "timeoutUnits": "seconds",
-    "rate": "1",
-    "nbRateUnits": "3",
-    "rateUnits": "second",
-    "randomFirst": "1",
-    "randomLast": "5",
-    "randomUnits": "seconds",
-    "drop": true,
-    "allowrate": false,
-    "outputs": 1,
-    "x": 820,
-    "y": 1500,
-    "wires": [
-      [
-        "068d9fb26226381b"
-      ]
-    ]
-  },
-  {
-    "id": "847ef9702d843e6d",
-    "type": "wake on lan",
-    "z": "1c33f591480337db",
-    "mac": "74-40-BE-9B-A8-E0",
-    "host": "10.0.0.127",
-    "udpport": 9,
-    "numpackets": 3,
-    "interval": 100,
-    "name": "WOL TV",
-    "x": 320,
-    "y": 3020,
-    "wires": []
-  },
-  {
-    "id": "c67ef25f142bf846",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Switch TV Source",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.select_source",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "media_player.lg_webos_smart_tv"
-    ],
-    "labelId": [],
-    "data": "{\"entity_id\":\"lg_webos_smart_tv\",\"source\":\"Streaming Box\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "select_source",
-    "x": 1150,
-    "y": 3140,
-    "wires": [
-      [
-        "b67c4bf533bdb0d0"
-      ]
-    ]
-  },
-  {
-    "id": "a979415edc2afc3c",
-    "type": "ha-wait-until",
-    "z": "1c33f591480337db",
-    "name": "Wait until TV on",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "entities": {
-      "entity": [
-        "media_player.lg_webos_smart_tv"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "property": "state",
-    "comparator": "is",
-    "value": "on",
-    "valueType": "str",
-    "timeout": "12",
-    "timeoutType": "num",
-    "timeoutUnits": "seconds",
-    "checkCurrentState": true,
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Passed",
-        "valueType": "str"
-      }
-    ],
-    "x": 940,
-    "y": 3140,
-    "wires": [
-      [
-        "c67ef25f142bf846"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "b67c4bf533bdb0d0",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Flag tv off",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.tv_auto_on"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_off",
-    "x": 1360,
-    "y": 3140,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "a4e7a651fc9078b5",
-    "type": "poll-state",
-    "z": "1c33f591480337db",
-    "name": "Poll TV Source",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "exposeAsEntityConfig": "",
-    "updateInterval": "4",
-    "updateIntervalType": "num",
-    "updateIntervalUnits": "seconds",
-    "outputInitially": true,
-    "outputOnChanged": true,
-    "entityId": "sensor.tv_source",
-    "stateType": "str",
-    "ifState": "",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputs": 1,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 1180,
-    "y": 2480,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "bc7165dc4121fbe0",
-    "type": "link out",
-    "z": "1c33f591480337db",
-    "name": "link out 16",
-    "mode": "link",
-    "links": [],
-    "x": 315,
-    "y": 2520,
-    "wires": []
-  },
-  {
-    "id": "4519fa2e95612248",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Switch Wi-Fi Source",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.select_source",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "f944c8c1faf7cc3350666074b0b53ae8"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"source\":\"Wi-Fi\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "select_source",
-    "x": 660,
-    "y": 2520,
-    "wires": [
-      [
-        "daf63f05228a8963"
-      ]
-    ]
-  },
-  {
-    "id": "daf63f05228a8963",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Soundbar - Music",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.select_sound_mode",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "f944c8c1faf7cc3350666074b0b53ae8"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"sound_mode\":\"Music\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "select_sound_mode",
-    "x": 870,
-    "y": 2520,
-    "wires": [
-      [
-        "e456a3186846304a"
-      ]
-    ]
-  },
-  {
-    "id": "f7d59e963e29f582",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Switch Spotify",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_select.select_option",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_select.sound_mode"
-    ],
-    "labelId": [],
-    "data": "{\"option\":\"Spotify\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_select",
-    "service": "select_option",
-    "x": 600,
-    "y": 2280,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "de628fa7b57748c5",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Turn Off Fan",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "switch.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "62f603051d9d83b8ccbce4ef2a22de00"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "switch",
-    "service": "turn_off",
-    "x": 390,
-    "y": 780,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "58506ce038980bb9",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "turn on Movie",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_on",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.movie_switch"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_on",
-    "x": 1040,
-    "y": 3400,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "79a3f5bb2ed660c7",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "turn on wii",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_on",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.wii_switch"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_on",
-    "x": 1030,
-    "y": 3340,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "f0c3698b7581e129",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Wii Scene",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.wii_switch",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 880,
-    "y": 3400,
-    "wires": [
-      [
-        "58506ce038980bb9"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "930f96672e39bebe",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Wii Scene",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.wii_switch",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 880,
-    "y": 3340,
-    "wires": [
-      [],
-      [
-        "79a3f5bb2ed660c7"
-      ]
-    ]
-  },
-  {
-    "id": "0ebf9284bd356bc2",
-    "type": "change",
-    "z": "1c33f591480337db",
-    "name": ">10W to Boolean",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "payload > 10 ? true : false",
-        "tot": "jsonata"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 330,
-    "y": 3360,
-    "wires": [
-      [
-        "4537347dce751a63"
-      ]
-    ]
-  },
-  {
-    "id": "4537347dce751a63",
-    "type": "rbe",
-    "z": "1c33f591480337db",
-    "name": "Filter True/False",
-    "func": "rbe",
-    "gap": "",
-    "start": "",
-    "inout": "out",
-    "septopics": false,
-    "property": "payload",
-    "topi": "topic",
-    "x": 520,
-    "y": 3360,
-    "wires": [
-      [
-        "4b2d63acc5c65cbd"
-      ]
-    ]
-  },
-  {
-    "id": "4b2d63acc5c65cbd",
-    "type": "switch",
-    "z": "1c33f591480337db",
-    "name": "Split True/False",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "true"
-      },
-      {
-        "t": "false"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 700,
-    "y": 3360,
-    "wires": [
-      [
-        "930f96672e39bebe"
-      ],
-      [
-        "f0c3698b7581e129"
-      ]
-    ]
-  },
-  {
-    "id": "ca575cceee160389",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Green Plug Power",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "sensor.plug_green_power"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "0",
-    "ifStateType": "str",
-    "ifStateOperator": "is_not",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "seconds",
-    "ignorePrevStateNull": true,
-    "ignorePrevStateUnknown": true,
-    "ignorePrevStateUnavailable": true,
-    "ignoreCurrentStateUnknown": true,
-    "ignoreCurrentStateUnavailable": true,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "number",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 110,
-    "y": 3360,
-    "wires": [
-      [
-        "0ebf9284bd356bc2"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "0866188114901603",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Set Lounge Status",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_text.set_value",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_text.lounge_status"
-    ],
-    "labelId": [],
-    "data": "{\"value\":\"\"}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_text",
-    "service": "set_value",
-    "x": 1230,
-    "y": 580,
-    "wires": [
-      [
-        "f2c18cd73274b2b3"
-      ]
-    ]
-  },
-  {
-    "id": "491fbef3fbf1f29b",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Set Lounge Status",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_text.set_value",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_text.lounge_status"
-    ],
-    "labelId": [],
-    "data": "{\"value\":\"WhatsApp\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_text",
-    "service": "set_value",
-    "x": 490,
-    "y": 2180,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "1d6c25c75065ac1f",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Set Lounge Status",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_text.set_value",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_text.lounge_status"
-    ],
-    "labelId": [],
-    "data": "{\"value\":\"Playing Music\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_text",
-    "service": "set_value",
-    "x": 430,
-    "y": 2460,
-    "wires": [
-      [
-        "4519fa2e95612248"
-      ]
-    ]
-  },
-  {
-    "id": "664897646aacf0e8",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Set Lounge Status",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_text.set_value",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_text.lounge_status"
-    ],
-    "labelId": [],
-    "data": "{\"value\":\"Chilling\"}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_text",
-    "service": "set_value",
-    "x": 430,
-    "y": 2560,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "1f6435ae444a3411",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Set Lounge Status",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_text.set_value",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_text.lounge_status"
-    ],
-    "labelId": [],
-    "data": "{\"value\":\"Movie Time\"}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_text",
-    "service": "set_value",
-    "x": 350,
-    "y": 3240,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "0f44e9a79a0de1b0",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Set Lounge Status",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_text.set_value",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_text.lounge_status"
-    ],
-    "labelId": [],
-    "data": "{\"value\":\"Play Time\"}",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_text",
-    "service": "set_value",
-    "x": 350,
-    "y": 2900,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "da8374ede6e6ddad",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "reading Mode on?",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "input_boolean.reading_switch"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "on",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Reading",
-        "valueType": "str"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 190,
-    "y": 520,
-    "wires": [
-      [
-        "828ef79a8febd99c"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "b3e4399147e7c8a7",
-    "type": "server-state-changed",
-    "z": "1c33f591480337db",
-    "name": "Shield Playing",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "media_player.android_tv_10_0_0_26"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "idle",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 690,
-    "y": 360,
-    "wires": [
-      [
-        "969b38845ce0db34"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "ce84b782d6fc5790",
-    "type": "link out",
-    "z": "1c33f591480337db",
-    "name": "link out 29",
-    "mode": "link",
-    "links": [],
-    "x": 325,
-    "y": 2240,
-    "wires": []
-  },
-  {
-    "id": "fcb0afb69e221aa2",
-    "type": "link out",
-    "z": "1c33f591480337db",
-    "name": "link out 32",
-    "mode": "link",
-    "links": [],
-    "x": 315,
-    "y": 2420,
-    "wires": []
-  },
-  {
-    "id": "dec5fd69d384ef7d",
-    "type": "wake on lan",
-    "z": "1c33f591480337db",
-    "mac": "74-40-BE-9B-A8-E0",
-    "host": "10.0.0.127",
-    "udpport": 9,
-    "numpackets": 3,
-    "interval": 100,
-    "name": "WOL TV",
-    "x": 320,
-    "y": 2680,
-    "wires": []
-  },
-  {
-    "id": "0c45dee3d9bc1c52",
-    "type": "api-current-state",
-    "z": "1c33f591480337db",
-    "name": "Shield off?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "off,standby,idle,unavailable",
-    "halt_if_type": "str",
-    "halt_if_compare": "includes",
-    "entity_id": "media_player.android_tv_10_0_0_26",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 550,
-    "y": 2800,
-    "wires": [
-      [
-        "5f03da2d0c81294d"
-      ],
-      [
-        "4eb1b83c83d81a43"
-      ]
-    ]
-  },
-  {
-    "id": "5f03da2d0c81294d",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Turn on Shield",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.turn_on",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "media_player.android_tv_10_0_0_26"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "turn_on",
-    "x": 740,
-    "y": 2740,
-    "wires": [
-      [
-        "4eb1b83c83d81a43"
-      ]
-    ]
-  },
-  {
-    "id": "4eb1b83c83d81a43",
-    "type": "ha-wait-until",
-    "z": "1c33f591480337db",
-    "name": "Wait until TV on",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "entities": {
-      "entity": [
-        "media_player.lg_webos_smart_tv"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "property": "state",
-    "comparator": "is",
-    "value": "on",
-    "valueType": "str",
-    "timeout": "12",
-    "timeoutType": "num",
-    "timeoutUnits": "seconds",
-    "checkCurrentState": true,
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "Passed",
-        "valueType": "str"
-      }
-    ],
-    "x": 940,
-    "y": 2800,
-    "wires": [
-      [
-        "97ed93517116b27e"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "e456a3186846304a",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Sound to 0.1",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.volume_set",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "f944c8c1faf7cc3350666074b0b53ae8"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"volume_level\":\"0.08\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "volume_set",
-    "x": 1130,
-    "y": 2520,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "2ed39853ab315a97",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Switch ARC Source",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.select_source",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "f944c8c1faf7cc3350666074b0b53ae8"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"source\":\"Optical/HDMI ARC\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "select_source",
-    "x": 570,
-    "y": 3220,
-    "wires": [
-      [
-        "315c1cbaed247062"
-      ]
-    ]
-  },
-  {
-    "id": "315c1cbaed247062",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Soundbar - Standard",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.select_sound_mode",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "media_player.soundbar"
-    ],
-    "labelId": [],
-    "data": "{\"sound_mode\":\"Standard\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "select_sound_mode",
-    "x": 800,
-    "y": 3220,
-    "wires": [
-      [
-        "69ff94adc3bb3bc2"
-      ]
-    ]
-  },
-  {
-    "id": "69ff94adc3bb3bc2",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Sound to 16",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.volume_set",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "f944c8c1faf7cc3350666074b0b53ae8"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"volume_level\":\"0.4\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "volume_set",
-    "x": 1010,
-    "y": 3220,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "973485a93f0e9ed0",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Switch ARC Source",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.select_source",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "f944c8c1faf7cc3350666074b0b53ae8"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"source\":\"Optical/HDMI ARC\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "select_source",
-    "x": 610,
-    "y": 2900,
-    "wires": [
-      [
-        "47344fbf7130eb31"
-      ]
-    ]
-  },
-  {
-    "id": "47344fbf7130eb31",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Soundbar - Bass Blast",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.select_sound_mode",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "f944c8c1faf7cc3350666074b0b53ae8"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"sound_mode\":\"Bass Blast\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "select_sound_mode",
-    "x": 840,
-    "y": 2900,
-    "wires": [
-      [
-        "8dc9b15c1493df78"
-      ]
-    ]
-  },
-  {
-    "id": "8dc9b15c1493df78",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Sound to 9",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.volume_set",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "f944c8c1faf7cc3350666074b0b53ae8"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"volume_level\":\"0.2\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "volume_set",
-    "x": 1050,
-    "y": 2900,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "5e7d894792648eae",
-    "type": "inject",
-    "z": "1c33f591480337db",
-    "name": "",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 1180,
-    "y": 2340,
-    "wires": [
-      [
-        "886e315850d003e2"
-      ]
-    ]
-  },
-  {
-    "id": "c968600746940c16",
-    "type": "inject",
-    "z": "1c33f591480337db",
-    "name": "",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 940,
-    "y": 2700,
-    "wires": [
-      [
-        "97ed93517116b27e"
-      ]
-    ]
-  },
-  {
-    "id": "6502f40732c64d2a",
-    "type": "inject",
-    "z": "1c33f591480337db",
-    "name": "",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 1180,
-    "y": 3080,
-    "wires": [
-      [
-        "b67c4bf533bdb0d0"
-      ]
-    ]
-  },
-  {
-    "id": "b699dcb51663518f",
-    "type": "api-call-service",
-    "z": "1c33f591480337db",
-    "name": "Turn On Fan",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "switch.turn_on",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "62f603051d9d83b8ccbce4ef2a22de00"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "switch",
-    "service": "turn_on",
-    "x": 470,
-    "y": 2700,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "75ac4d66a0cdb209",
-    "type": "debug",
-    "z": "1c33f591480337db",
-    "name": "debug 2",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 1620,
-    "y": 560,
-    "wires": []
-  },
-  {
-    "id": "f2c18cd73274b2b3",
-    "type": "change",
-    "z": "1c33f591480337db",
-    "name": "get original switch",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "topic",
-        "tot": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1450,
-    "y": 500,
-    "wires": [
-      [
-        "75ac4d66a0cdb209"
-      ]
-    ]
-  },
-  {
-    "id": "a5dbc56c7f614fb8",
-    "type": "debug",
-    "z": "1c33f591480337db",
-    "name": "debug 3",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 520,
-    "y": 460,
-    "wires": []
-  },
-  {
-    "id": "a360e5fc4cca9ca4",
-    "type": "ha-get-entities",
-    "z": "1c33f591480337db",
-    "name": "",
-    "server": "178754b9.fedf4b",
-    "version": 1,
-    "rules": [
-      {
-        "condition": "state_object",
-        "property": "entity_id",
-        "logic": "includes",
-        "value": "input_boolean.movie_switch,input_boolean.whatsapp,input_boolean.wii_switch,input_boolean.lounge_chill_switch, input_boolean.reading_switch",
-        "valueType": "str"
-      },
-      {
-        "condition": "state_object",
-        "property": "state",
-        "logic": "is",
-        "value": "on",
-        "valueType": "str"
-      }
-    ],
-    "outputType": "array",
-    "outputEmptyResults": true,
-    "outputLocationType": "msg",
-    "outputLocation": "payload",
-    "outputResultsCount": 1,
-    "x": 430,
-    "y": 1080,
-    "wires": [
-      [
-        "2a0c7eb8fe20232b",
-        "4aa14a18d2ce4ee5"
-      ]
-    ]
-  },
-  {
-    "id": "2a0c7eb8fe20232b",
-    "type": "switch",
-    "z": "1c33f591480337db",
-    "name": "",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "empty"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 1,
-    "x": 610,
-    "y": 1080,
-    "wires": [
-      [
-        "0db14b5c5126816f",
-        "61f7e3822c675bfc"
-      ]
-    ]
-  },
-  {
-    "id": "4aa14a18d2ce4ee5",
-    "type": "debug",
-    "z": "1c33f591480337db",
-    "name": "get entities output",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 710,
-    "y": 1000,
-    "wires": []
-  },
-  {
-    "id": "61f7e3822c675bfc",
-    "type": "debug",
-    "z": "1c33f591480337db",
-    "name": "where none set",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 780,
-    "y": 1140,
-    "wires": []
   },
   {
     "id": "6c0eb4b2743c994b",
@@ -16643,7 +11727,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 330,
+    "x": 310,
     "y": 600,
     "wires": [
       [
@@ -16813,8 +11897,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 5,
-    "x": 1150,
-    "y": 1000,
+    "x": 1170,
+    "y": 1280,
     "wires": [
       [
         "749b08a38c634592"
@@ -16854,8 +11938,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_off",
-    "x": 1390,
-    "y": 650,
+    "x": 1400,
+    "y": 640,
     "wires": [
       []
     ]
@@ -16916,8 +12000,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_off",
-    "x": 1390,
-    "y": 750,
+    "x": 1410,
+    "y": 760,
     "wires": [
       []
     ]
@@ -16947,8 +12031,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_off",
-    "x": 1390,
-    "y": 800,
+    "x": 1400,
+    "y": 820,
     "wires": [
       []
     ]
@@ -16979,7 +12063,7 @@
     "domain": "input_boolean",
     "service": "turn_off",
     "x": 1390,
-    "y": 850,
+    "y": 880,
     "wires": [
       []
     ]
@@ -17009,8 +12093,8 @@
     "blockInputOverrides": false,
     "domain": "input_text",
     "service": "set_value",
-    "x": 1390,
-    "y": 910,
+    "x": 1410,
+    "y": 940,
     "wires": [
       []
     ]
@@ -17040,8 +12124,8 @@
     "blockInputOverrides": false,
     "domain": "input_text",
     "service": "set_value",
-    "x": 1570,
-    "y": 1200,
+    "x": 1610,
+    "y": 1480,
     "wires": [
       []
     ]
@@ -17434,8 +12518,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_off",
-    "x": 2920,
-    "y": 740,
+    "x": 2900,
+    "y": 560,
     "wires": [
       []
     ]
@@ -17476,13 +12560,13 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 2020,
-    "y": 880,
+    "x": 1660,
+    "y": 1200,
     "wires": [
       [],
       [
-        "f55db1344bef4742",
-        "101c06972a329874"
+        "101c06972a329874",
+        "f9c4afe9cbbc4f43"
       ]
     ]
   },
@@ -17522,13 +12606,13 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 2020,
-    "y": 940,
+    "x": 1660,
+    "y": 1260,
     "wires": [
       [],
       [
-        "f55db1344bef4742",
-        "101c06972a329874"
+        "101c06972a329874",
+        "f9c4afe9cbbc4f43"
       ]
     ]
   },
@@ -17568,8 +12652,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 1410,
-    "y": 1080,
+    "x": 1630,
+    "y": 1320,
     "wires": [
       [
         "65803c3e83084bfb"
@@ -17602,8 +12686,8 @@
     "blockInputOverrides": false,
     "domain": "media_player",
     "service": "turn_off",
-    "x": 1650,
-    "y": 1080,
+    "x": 2060,
+    "y": 1320,
     "wires": [
       []
     ]
@@ -17636,8 +12720,8 @@
     "outputLocationType": "msg",
     "outputLocation": "payload",
     "outputResultsCount": 1,
-    "x": 1070,
-    "y": 1180,
+    "x": 1140,
+    "y": 1420,
     "wires": [
       [
         "84b5588d7b324c46"
@@ -17659,8 +12743,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 1310,
-    "y": 1180,
+    "x": 1380,
+    "y": 1420,
     "wires": [
       [
         "926d4968ec3c4daf",
@@ -17677,8 +12761,8 @@
     "links": [
       "bf2ecb14abb5b08c"
     ],
-    "x": 1475,
-    "y": 1160,
+    "x": 1505,
+    "y": 1420,
     "wires": []
   },
   {
@@ -17728,7 +12812,7 @@
     "fri": true,
     "sat": true,
     "sun": true,
-    "x": 300,
+    "x": 280,
     "y": 760,
     "wires": [
       [
@@ -17798,7 +12882,7 @@
     "blockInputOverrides": false,
     "domain": "switch",
     "service": "turn_off",
-    "x": 570,
+    "x": 550,
     "y": 820,
     "wires": [
       []
@@ -17854,8 +12938,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 370,
-    "y": 1460,
+    "x": 290,
+    "y": 1780,
     "wires": [
       [
         "e41825b911084637"
@@ -17882,8 +12966,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 580,
-    "y": 1460,
+    "x": 540,
+    "y": 1780,
     "wires": [
       [
         "b92ee413ec544a3a"
@@ -17902,8 +12986,8 @@
     "septopics": false,
     "property": "payload",
     "topi": "topic",
-    "x": 760,
-    "y": 1460,
+    "x": 720,
+    "y": 1780,
     "wires": [
       [
         "607f071b34f84c1b"
@@ -17928,8 +13012,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 940,
-    "y": 1460,
+    "x": 900,
+    "y": 1780,
     "wires": [
       [
         "37644bad9ba64178"
@@ -17975,8 +13059,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 1120,
-    "y": 1440,
+    "x": 1080,
+    "y": 1760,
     "wires": [
       [],
       [
@@ -18009,8 +13093,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_on",
-    "x": 1300,
-    "y": 1440,
+    "x": 1260,
+    "y": 1760,
     "wires": [
       []
     ]
@@ -18051,8 +13135,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 1120,
-    "y": 1500,
+    "x": 1080,
+    "y": 1820,
     "wires": [
       [
         "cc642849d25f458a"
@@ -18085,8 +13169,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_on",
-    "x": 1300,
-    "y": 1500,
+    "x": 1260,
+    "y": 1820,
     "wires": [
       []
     ]
@@ -18116,8 +13200,8 @@
     "blockInputOverrides": false,
     "domain": "switch",
     "service": "turn_on",
-    "x": 1140,
-    "y": 1640,
+    "x": 1400,
+    "y": 1000,
     "wires": [
       []
     ]
@@ -18148,7 +13232,7 @@
     "domain": "switch",
     "service": "turn_off",
     "x": 1140,
-    "y": 1700,
+    "y": 1520,
     "wires": [
       []
     ]
@@ -18200,7 +13284,7 @@
     "fri": true,
     "sat": true,
     "sun": true,
-    "x": 400,
+    "x": 390,
     "y": 1580,
     "wires": [
       [
@@ -18286,7 +13370,7 @@
     "fri": true,
     "sat": true,
     "sun": true,
-    "x": 400,
+    "x": 370,
     "y": 1640,
     "wires": [
       [
@@ -18429,7 +13513,7 @@
     "z": "34c4d0d41a834ca6",
     "name": "TRIGGER + SCENE ENGINE (data-driven table)",
     "info": "",
-    "x": 360,
+    "x": 380,
     "y": 540,
     "wires": []
   },
@@ -18449,8 +13533,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "OFF dispatch — teardown only for TV/music scenes",
     "info": "",
-    "x": 1070,
-    "y": 940,
+    "x": 1250,
+    "y": 1200,
     "wires": []
   },
   {
@@ -18459,7 +13543,7 @@
     "z": "34c4d0d41a834ca6",
     "name": "Shared turn-offs (exclusion + midnight)",
     "info": "",
-    "x": 1410,
+    "x": 1470,
     "y": 600,
     "wires": []
   },
@@ -18499,8 +13583,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Teardown: last TV scene off -> flag off + 2s delay -> TV off",
     "info": "",
-    "x": 2110,
-    "y": 820,
+    "x": 1750,
+    "y": 1140,
     "wires": []
   },
   {
@@ -18509,8 +13593,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "None-on check (entity list FIXED vs live)",
     "info": "",
-    "x": 1070,
-    "y": 1140,
+    "x": 1210,
+    "y": 1380,
     "wires": []
   },
   {
@@ -18529,8 +13613,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Green plug auto-scene (cloned unchanged)",
     "info": "",
-    "x": 400,
-    "y": 1420,
+    "x": 360,
+    "y": 1740,
     "wires": []
   },
   {
@@ -18539,18 +13623,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Xmas — standalone scene; timers SUSPENDED until December",
     "info": "",
-    "x": 400,
-    "y": 1540,
-    "wires": []
-  },
-  {
-    "id": "61c593034b1e47fd",
-    "type": "comment",
-    "z": "34c4d0d41a834ca6",
-    "name": "NOT in draft: 5 poll-state nodes (dead in live). TV-polling + lights cascade stay in the Lounge tab.",
-    "info": "",
-    "x": 540,
-    "y": 1810,
+    "x": 430,
+    "y": 1520,
     "wires": []
   },
   {
@@ -18560,7 +13634,7 @@
     "name": "TV Polling",
     "info": "",
     "x": 260,
-    "y": 340,
+    "y": 180,
     "wires": []
   },
   {
@@ -18602,8 +13676,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 260,
-    "y": 380,
+    "x": 280,
+    "y": 240,
     "wires": [
       []
     ]
@@ -18658,8 +13732,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 250,
-    "y": 1900,
+    "x": 270,
+    "y": 1960,
     "wires": [
       [
         "f350f80f429d31ba"
@@ -18719,13 +13793,15 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 250,
-    "y": 1954,
+    "x": 270,
+    "y": 2100,
     "wires": [
       [
         "b1e3f1a6854508ac"
       ],
-      []
+      [
+        "d61d978693e10be3"
+      ]
     ]
   },
   {
@@ -18764,8 +13840,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 769.4513854980469,
-    "y": 1974,
+    "x": 789.4513854980469,
+    "y": 2034,
     "wires": [
       [
         "53304d10e73de0ac"
@@ -18793,7 +13869,7 @@
       {
         "property": "payload",
         "propertyType": "msg",
-        "value": "",
+        "value": "string",
         "valueType": "entityState"
       },
       {
@@ -18811,8 +13887,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 959.4513854980469,
-    "y": 1994,
+    "x": 979.4513854980469,
+    "y": 2054,
     "wires": [
       [
         "53304d10e73de0ac"
@@ -18858,8 +13934,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 759.4513854980469,
-    "y": 1914,
+    "x": 779.4513854980469,
+    "y": 1974,
     "wires": [
       [
         "53304d10e73de0ac"
@@ -18894,8 +13970,8 @@
     "blockInputOverrides": false,
     "domain": "light",
     "service": "turn_on",
-    "x": 1240,
-    "y": 1874,
+    "x": 1260,
+    "y": 1934,
     "wires": [
       []
     ]
@@ -18909,8 +13985,8 @@
     "links": [
       "733ebaa1883876cb"
     ],
-    "x": 1155,
-    "y": 1934,
+    "x": 1175,
+    "y": 2000,
     "wires": []
   },
   {
@@ -18922,8 +13998,8 @@
     "links": [
       "733ebaa1883876cb"
     ],
-    "x": 1155,
-    "y": 1994,
+    "x": 1175,
+    "y": 2054,
     "wires": []
   },
   {
@@ -18932,8 +14008,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Light Low",
     "info": "",
-    "x": 1240,
-    "y": 1994,
+    "x": 1260,
+    "y": 2054,
     "wires": []
   },
   {
@@ -18943,7 +14019,7 @@
     "name": "Light Low",
     "info": "",
     "x": 1260,
-    "y": 1934,
+    "y": 2000,
     "wires": []
   },
   {
@@ -18952,8 +14028,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Movie Playing",
     "info": "",
-    "x": 250,
-    "y": 1854,
+    "x": 270,
+    "y": 1914,
     "wires": []
   },
   {
@@ -18962,8 +14038,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Light Off",
     "info": "",
-    "x": 1420,
-    "y": 1874,
+    "x": 1440,
+    "y": 1934,
     "wires": []
   },
   {
@@ -19002,8 +14078,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 559.4513854980469,
-    "y": 1874,
+    "x": 579.4513854980469,
+    "y": 1934,
     "wires": [
       [],
       [
@@ -19047,8 +14123,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 559.4513854980469,
-    "y": 1934,
+    "x": 579.4513854980469,
+    "y": 1994,
     "wires": [
       [],
       [
@@ -19092,8 +14168,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 559.4513854980469,
-    "y": 1994,
+    "x": 580,
+    "y": 2080,
     "wires": [
       [],
       [
@@ -19151,8 +14227,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 770,
-    "y": 2054,
+    "x": 550,
+    "y": 2200,
     "wires": [
       [
         "b423aa41ba30fd52"
@@ -19247,10 +14323,94 @@
     "blockInputOverrides": false,
     "domain": "media_player",
     "service": "turn_off",
-    "x": 2400,
-    "y": 940,
+    "x": 2040,
+    "y": 1260,
     "wires": [
       []
     ]
+  },
+  {
+    "id": "d61d978693e10be3",
+    "type": "api-current-state",
+    "z": "34c4d0d41a834ca6",
+    "name": "Shield Idle/Paused",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "idle,paused",
+    "halt_if_type": "str",
+    "halt_if_compare": "includes",
+    "entity_id": "media_player.android_tv_10_0_0_26",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "string",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 570,
+    "y": 2140,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "f9c4afe9cbbc4f43",
+    "type": "api-call-service",
+    "z": "34c4d0d41a834ca6",
+    "name": "Flag tv off",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "input_boolean.turn_off",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_boolean.tv_auto_on"
+    ],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "input_boolean",
+    "service": "turn_off",
+    "x": 2020,
+    "y": 1200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8fc3ebc0334faa35",
+    "type": "comment",
+    "z": "34c4d0d41a834ca6",
+    "name": "shield: playing: idle",
+    "info": "",
+    "x": 290,
+    "y": 2320,
+    "wires": []
   }
 ]

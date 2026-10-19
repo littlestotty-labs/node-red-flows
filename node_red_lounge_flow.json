@@ -62,7 +62,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 330,
+    "x": 310,
     "y": 600,
     "wires": [
       [
@@ -232,8 +232,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 5,
-    "x": 1150,
-    "y": 1000,
+    "x": 1170,
+    "y": 1280,
     "wires": [
       [
         "749b08a38c634592"
@@ -273,8 +273,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_off",
-    "x": 1390,
-    "y": 650,
+    "x": 1400,
+    "y": 640,
     "wires": [
       []
     ]
@@ -335,8 +335,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_off",
-    "x": 1390,
-    "y": 750,
+    "x": 1410,
+    "y": 760,
     "wires": [
       []
     ]
@@ -366,8 +366,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_off",
-    "x": 1390,
-    "y": 800,
+    "x": 1400,
+    "y": 820,
     "wires": [
       []
     ]
@@ -398,7 +398,7 @@
     "domain": "input_boolean",
     "service": "turn_off",
     "x": 1390,
-    "y": 850,
+    "y": 880,
     "wires": [
       []
     ]
@@ -428,8 +428,8 @@
     "blockInputOverrides": false,
     "domain": "input_text",
     "service": "set_value",
-    "x": 1390,
-    "y": 910,
+    "x": 1410,
+    "y": 940,
     "wires": [
       []
     ]
@@ -459,8 +459,8 @@
     "blockInputOverrides": false,
     "domain": "input_text",
     "service": "set_value",
-    "x": 1570,
-    "y": 1200,
+    "x": 1610,
+    "y": 1480,
     "wires": [
       []
     ]
@@ -853,8 +853,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_off",
-    "x": 2920,
-    "y": 740,
+    "x": 2900,
+    "y": 560,
     "wires": [
       []
     ]
@@ -895,13 +895,13 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 2020,
-    "y": 880,
+    "x": 1660,
+    "y": 1200,
     "wires": [
       [],
       [
-        "f55db1344bef4742",
-        "101c06972a329874"
+        "101c06972a329874",
+        "f9c4afe9cbbc4f43"
       ]
     ]
   },
@@ -941,13 +941,13 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 2020,
-    "y": 940,
+    "x": 1660,
+    "y": 1260,
     "wires": [
       [],
       [
-        "f55db1344bef4742",
-        "101c06972a329874"
+        "101c06972a329874",
+        "f9c4afe9cbbc4f43"
       ]
     ]
   },
@@ -987,8 +987,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 1410,
-    "y": 1080,
+    "x": 1630,
+    "y": 1320,
     "wires": [
       [
         "65803c3e83084bfb"
@@ -1021,8 +1021,8 @@
     "blockInputOverrides": false,
     "domain": "media_player",
     "service": "turn_off",
-    "x": 1650,
-    "y": 1080,
+    "x": 2060,
+    "y": 1320,
     "wires": [
       []
     ]
@@ -1055,8 +1055,8 @@
     "outputLocationType": "msg",
     "outputLocation": "payload",
     "outputResultsCount": 1,
-    "x": 1070,
-    "y": 1180,
+    "x": 1140,
+    "y": 1420,
     "wires": [
       [
         "84b5588d7b324c46"
@@ -1078,8 +1078,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 1310,
-    "y": 1180,
+    "x": 1380,
+    "y": 1420,
     "wires": [
       [
         "926d4968ec3c4daf",
@@ -1096,8 +1096,8 @@
     "links": [
       "bf2ecb14abb5b08c"
     ],
-    "x": 1475,
-    "y": 1160,
+    "x": 1505,
+    "y": 1420,
     "wires": []
   },
   {
@@ -1147,7 +1147,7 @@
     "fri": true,
     "sat": true,
     "sun": true,
-    "x": 300,
+    "x": 280,
     "y": 760,
     "wires": [
       [
@@ -1217,7 +1217,7 @@
     "blockInputOverrides": false,
     "domain": "switch",
     "service": "turn_off",
-    "x": 570,
+    "x": 550,
     "y": 820,
     "wires": [
       []
@@ -1273,8 +1273,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 370,
-    "y": 1460,
+    "x": 290,
+    "y": 1780,
     "wires": [
       [
         "e41825b911084637"
@@ -1301,8 +1301,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 580,
-    "y": 1460,
+    "x": 540,
+    "y": 1780,
     "wires": [
       [
         "b92ee413ec544a3a"
@@ -1321,8 +1321,8 @@
     "septopics": false,
     "property": "payload",
     "topi": "topic",
-    "x": 760,
-    "y": 1460,
+    "x": 720,
+    "y": 1780,
     "wires": [
       [
         "607f071b34f84c1b"
@@ -1347,8 +1347,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 940,
-    "y": 1460,
+    "x": 900,
+    "y": 1780,
     "wires": [
       [
         "37644bad9ba64178"
@@ -1394,8 +1394,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 1120,
-    "y": 1440,
+    "x": 1080,
+    "y": 1760,
     "wires": [
       [],
       [
@@ -1428,8 +1428,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_on",
-    "x": 1300,
-    "y": 1440,
+    "x": 1260,
+    "y": 1760,
     "wires": [
       []
     ]
@@ -1470,8 +1470,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 1120,
-    "y": 1500,
+    "x": 1080,
+    "y": 1820,
     "wires": [
       [
         "cc642849d25f458a"
@@ -1504,8 +1504,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_on",
-    "x": 1300,
-    "y": 1500,
+    "x": 1260,
+    "y": 1820,
     "wires": [
       []
     ]
@@ -1535,8 +1535,8 @@
     "blockInputOverrides": false,
     "domain": "switch",
     "service": "turn_on",
-    "x": 1140,
-    "y": 1640,
+    "x": 1400,
+    "y": 1000,
     "wires": [
       []
     ]
@@ -1567,7 +1567,7 @@
     "domain": "switch",
     "service": "turn_off",
     "x": 1140,
-    "y": 1700,
+    "y": 1520,
     "wires": [
       []
     ]
@@ -1619,7 +1619,7 @@
     "fri": true,
     "sat": true,
     "sun": true,
-    "x": 400,
+    "x": 390,
     "y": 1580,
     "wires": [
       [
@@ -1705,7 +1705,7 @@
     "fri": true,
     "sat": true,
     "sun": true,
-    "x": 400,
+    "x": 370,
     "y": 1640,
     "wires": [
       [
@@ -1848,7 +1848,7 @@
     "z": "34c4d0d41a834ca6",
     "name": "TRIGGER + SCENE ENGINE (data-driven table)",
     "info": "",
-    "x": 360,
+    "x": 380,
     "y": 540,
     "wires": []
   },
@@ -1868,8 +1868,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "OFF dispatch — teardown only for TV/music scenes",
     "info": "",
-    "x": 1070,
-    "y": 940,
+    "x": 1250,
+    "y": 1200,
     "wires": []
   },
   {
@@ -1878,7 +1878,7 @@
     "z": "34c4d0d41a834ca6",
     "name": "Shared turn-offs (exclusion + midnight)",
     "info": "",
-    "x": 1410,
+    "x": 1470,
     "y": 600,
     "wires": []
   },
@@ -1918,8 +1918,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Teardown: last TV scene off -> flag off + 2s delay -> TV off",
     "info": "",
-    "x": 2110,
-    "y": 820,
+    "x": 1750,
+    "y": 1140,
     "wires": []
   },
   {
@@ -1928,8 +1928,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "None-on check (entity list FIXED vs live)",
     "info": "",
-    "x": 1070,
-    "y": 1140,
+    "x": 1210,
+    "y": 1380,
     "wires": []
   },
   {
@@ -1948,8 +1948,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Green plug auto-scene (cloned unchanged)",
     "info": "",
-    "x": 400,
-    "y": 1420,
+    "x": 360,
+    "y": 1740,
     "wires": []
   },
   {
@@ -1958,18 +1958,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Xmas — standalone scene; timers SUSPENDED until December",
     "info": "",
-    "x": 400,
-    "y": 1540,
-    "wires": []
-  },
-  {
-    "id": "61c593034b1e47fd",
-    "type": "comment",
-    "z": "34c4d0d41a834ca6",
-    "name": "NOT in draft: 5 poll-state nodes (dead in live). TV-polling + lights cascade stay in the Lounge tab.",
-    "info": "",
-    "x": 540,
-    "y": 1810,
+    "x": 430,
+    "y": 1520,
     "wires": []
   },
   {
@@ -1979,7 +1969,7 @@
     "name": "TV Polling",
     "info": "",
     "x": 260,
-    "y": 340,
+    "y": 180,
     "wires": []
   },
   {
@@ -2021,8 +2011,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 260,
-    "y": 380,
+    "x": 280,
+    "y": 240,
     "wires": [
       []
     ]
@@ -2077,8 +2067,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 250,
-    "y": 1900,
+    "x": 270,
+    "y": 1960,
     "wires": [
       [
         "f350f80f429d31ba"
@@ -2138,13 +2128,15 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 250,
-    "y": 1954,
+    "x": 270,
+    "y": 2100,
     "wires": [
       [
         "b1e3f1a6854508ac"
       ],
-      []
+      [
+        "d61d978693e10be3"
+      ]
     ]
   },
   {
@@ -2183,8 +2175,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 769.4513854980469,
-    "y": 1974,
+    "x": 789.4513854980469,
+    "y": 2034,
     "wires": [
       [
         "53304d10e73de0ac"
@@ -2212,7 +2204,7 @@
       {
         "property": "payload",
         "propertyType": "msg",
-        "value": "",
+        "value": "string",
         "valueType": "entityState"
       },
       {
@@ -2230,8 +2222,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 959.4513854980469,
-    "y": 1994,
+    "x": 979.4513854980469,
+    "y": 2054,
     "wires": [
       [
         "53304d10e73de0ac"
@@ -2277,8 +2269,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 759.4513854980469,
-    "y": 1914,
+    "x": 779.4513854980469,
+    "y": 1974,
     "wires": [
       [
         "53304d10e73de0ac"
@@ -2313,8 +2305,8 @@
     "blockInputOverrides": false,
     "domain": "light",
     "service": "turn_on",
-    "x": 1240,
-    "y": 1874,
+    "x": 1260,
+    "y": 1934,
     "wires": [
       []
     ]
@@ -2328,8 +2320,8 @@
     "links": [
       "733ebaa1883876cb"
     ],
-    "x": 1155,
-    "y": 1934,
+    "x": 1175,
+    "y": 2000,
     "wires": []
   },
   {
@@ -2341,8 +2333,8 @@
     "links": [
       "733ebaa1883876cb"
     ],
-    "x": 1155,
-    "y": 1994,
+    "x": 1175,
+    "y": 2054,
     "wires": []
   },
   {
@@ -2351,8 +2343,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Light Low",
     "info": "",
-    "x": 1240,
-    "y": 1994,
+    "x": 1260,
+    "y": 2054,
     "wires": []
   },
   {
@@ -2362,7 +2354,7 @@
     "name": "Light Low",
     "info": "",
     "x": 1260,
-    "y": 1934,
+    "y": 2000,
     "wires": []
   },
   {
@@ -2371,8 +2363,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Movie Playing",
     "info": "",
-    "x": 250,
-    "y": 1854,
+    "x": 270,
+    "y": 1914,
     "wires": []
   },
   {
@@ -2381,8 +2373,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "Light Off",
     "info": "",
-    "x": 1420,
-    "y": 1874,
+    "x": 1440,
+    "y": 1934,
     "wires": []
   },
   {
@@ -2421,8 +2413,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 559.4513854980469,
-    "y": 1874,
+    "x": 579.4513854980469,
+    "y": 1934,
     "wires": [
       [],
       [
@@ -2466,8 +2458,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 559.4513854980469,
-    "y": 1934,
+    "x": 579.4513854980469,
+    "y": 1994,
     "wires": [
       [],
       [
@@ -2511,8 +2503,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 559.4513854980469,
-    "y": 1994,
+    "x": 580,
+    "y": 2080,
     "wires": [
       [],
       [
@@ -2570,8 +2562,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 770,
-    "y": 2054,
+    "x": 550,
+    "y": 2200,
     "wires": [
       [
         "b423aa41ba30fd52"
@@ -2666,10 +2658,94 @@
     "blockInputOverrides": false,
     "domain": "media_player",
     "service": "turn_off",
-    "x": 2400,
-    "y": 940,
+    "x": 2040,
+    "y": 1260,
     "wires": [
       []
     ]
+  },
+  {
+    "id": "d61d978693e10be3",
+    "type": "api-current-state",
+    "z": "34c4d0d41a834ca6",
+    "name": "Shield Idle/Paused",
+    "server": "178754b9.fedf4b",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "idle,paused",
+    "halt_if_type": "str",
+    "halt_if_compare": "includes",
+    "entity_id": "media_player.android_tv_10_0_0_26",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "string",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 570,
+    "y": 2140,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "f9c4afe9cbbc4f43",
+    "type": "api-call-service",
+    "z": "34c4d0d41a834ca6",
+    "name": "Flag tv off",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "input_boolean.turn_off",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_boolean.tv_auto_on"
+    ],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "input_boolean",
+    "service": "turn_off",
+    "x": 2020,
+    "y": 1200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8fc3ebc0334faa35",
+    "type": "comment",
+    "z": "34c4d0d41a834ca6",
+    "name": "shield: playing: idle",
+    "info": "",
+    "x": 290,
+    "y": 2320,
+    "wires": []
   }
 ]
