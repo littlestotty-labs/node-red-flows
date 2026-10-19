@@ -16,6 +16,7 @@ const TAB_FILES = {
   "Rear Garden": "node_red_rear_garden_flow.json",
   "Petrol": "node_red_petrol_flow.json",
   "Christmas Lights": "node_red_christmas_lights_flow.json",
+  "Backup Nodes": "node_red_backup_nodes.json",
 };
 
 const nodes = JSON.parse(fs.readFileSync(SRC, "utf8"));

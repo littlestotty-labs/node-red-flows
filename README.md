@@ -11,12 +11,13 @@ Node-RED addon, pushed to GitHub on a schedule.
 | `node_red_lounge_flow.json` | Lounge tab |
 | `node_red_office.json` | Office tab |
 | `node_red_lights_flow.json` | Lights tab |
-| `node_red_lights_sub_flow.json` | Light sub-flows (Light On / Light Off) |
+| `node_red_lights_sub_flow.json` | Sub-flows (Light On / Light Off (1) / TV Bring-up) |
 | `node_red_aircon_flow.json` | Aircon tab |
 | `node_red_bedroom.json` | Bedroom tab |
 | `node_red_rear_garden_flow.json` | Rear Garden tab |
 | `node_red_petrol_flow.json` | Petrol tab |
 | `node_red_christmas_lights_flow.json` | Christmas Lights tab |
+| `node_red_backup_nodes.json` | Backup Nodes tab (the flow that triggers `export.sh`) |
 | `export.sh` | The backup script (runs inside the Node-RED addon) |
 | `splitter.js` | Splits `flows.json` into the per-tab files above |
 

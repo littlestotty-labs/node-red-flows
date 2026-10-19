@@ -1,0 +1,116 @@
+[
+  {
+    "id": "cd7f1db63ebecbe3",
+    "type": "tab",
+    "label": "Backup Nodes",
+    "disabled": false,
+    "info": "For backing up to git",
+    "env": []
+  },
+  {
+    "id": "backup_weekly",
+    "type": "inject",
+    "z": "cd7f1db63ebecbe3",
+    "name": "Weekly (Mon 03:00)",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "0 3 * * 1",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 140,
+    "y": 80,
+    "wires": [
+      [
+        "backup_exec"
+      ]
+    ]
+  },
+  {
+    "id": "backup_manual",
+    "type": "inject",
+    "z": "cd7f1db63ebecbe3",
+    "name": "Run now",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 110,
+    "y": 150,
+    "wires": [
+      [
+        "backup_exec"
+      ]
+    ]
+  },
+  {
+    "id": "backup_exec",
+    "type": "exec",
+    "z": "cd7f1db63ebecbe3",
+    "command": "bash /homeassistant/node_red_flows/export.sh",
+    "addpay": false,
+    "append": "",
+    "useSpawn": "false",
+    "timer": "",
+    "winHide": false,
+    "oldrc": false,
+    "name": "Run flow backup",
+    "x": 420,
+    "y": 100,
+    "wires": [
+      [
+        "backup_dbg_out"
+      ],
+      [
+        "backup_dbg_err"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "backup_dbg_out",
+    "type": "debug",
+    "z": "cd7f1db63ebecbe3",
+    "name": "stdout",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 640,
+    "y": 70,
+    "wires": []
+  },
+  {
+    "id": "backup_dbg_err",
+    "type": "debug",
+    "z": "cd7f1db63ebecbe3",
+    "name": "stderr",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 640,
+    "y": 140,
+    "wires": []
+  }
+]
