@@ -63,7 +63,7 @@
       }
     ],
     "x": 310,
-    "y": 600,
+    "y": 460,
     "wires": [
       [
         "fd80cb06d08742dd"
@@ -85,8 +85,8 @@
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 600,
-    "y": 600,
+    "x": 560,
+    "y": 460,
     "wires": [
       [
         "d342e5edfbe944cc"
@@ -144,8 +144,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 6,
-    "x": 860,
-    "y": 600,
+    "x": 840,
+    "y": 320,
     "wires": [
       [
         "4ae54a2381464b82",
@@ -232,8 +232,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 5,
-    "x": 1170,
-    "y": 1280,
+    "x": 1430,
+    "y": 1140,
     "wires": [
       [
         "749b08a38c634592"
@@ -459,8 +459,8 @@
     "blockInputOverrides": false,
     "domain": "input_text",
     "service": "set_value",
-    "x": 1610,
-    "y": 1480,
+    "x": 1870,
+    "y": 1340,
     "wires": [
       []
     ]
@@ -487,8 +487,8 @@
         "type": "str"
       }
     ],
-    "x": 1230,
-    "y": 285,
+    "x": 1420,
+    "y": 520,
     "wires": []
   },
   {
@@ -513,8 +513,8 @@
         "type": "str"
       }
     ],
-    "x": 1230,
-    "y": 340,
+    "x": 1410,
+    "y": 560,
     "wires": []
   },
   {
@@ -542,8 +542,8 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_on",
-    "x": 1790,
-    "y": 520,
+    "x": 1410,
+    "y": 460,
     "wires": [
       [
         "7483ec01d20a4474",
@@ -571,7 +571,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 2000,
+    "x": 1720,
     "y": 580,
     "wires": [
       [
@@ -599,7 +599,7 @@
     "outputLocationType": "msg",
     "outputLocation": "payload",
     "outputResultsCount": 1,
-    "x": 2160,
+    "x": 1880,
     "y": 580,
     "wires": [
       [
@@ -626,7 +626,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 2340,
+    "x": 2060,
     "y": 580,
     "wires": [
       [
@@ -656,7 +656,7 @@
     "checkall": "false",
     "repair": false,
     "outputs": 2,
-    "x": 2530,
+    "x": 2250,
     "y": 580,
     "wires": [
       [
@@ -690,7 +690,7 @@
     "blockInputOverrides": false,
     "domain": "spotifyplus",
     "service": "player_media_play_context",
-    "x": 2720,
+    "x": 2440,
     "y": 540,
     "wires": [
       [
@@ -721,7 +721,7 @@
     "blockInputOverrides": false,
     "domain": "spotcast",
     "service": "start",
-    "x": 2710,
+    "x": 2430,
     "y": 600,
     "wires": [
       [
@@ -754,7 +754,7 @@
     "blockInputOverrides": false,
     "domain": "media_player",
     "service": "select_source",
-    "x": 2040,
+    "x": 1760,
     "y": 460,
     "wires": [
       [
@@ -787,7 +787,7 @@
     "blockInputOverrides": false,
     "domain": "media_player",
     "service": "select_sound_mode",
-    "x": 2250,
+    "x": 1970,
     "y": 460,
     "wires": [
       [
@@ -820,7 +820,7 @@
     "blockInputOverrides": false,
     "domain": "media_player",
     "service": "volume_set",
-    "x": 2430,
+    "x": 2150,
     "y": 460,
     "wires": [
       [
@@ -853,7 +853,7 @@
     "blockInputOverrides": false,
     "domain": "input_boolean",
     "service": "turn_off",
-    "x": 2900,
+    "x": 2620,
     "y": 560,
     "wires": [
       []
@@ -895,8 +895,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 1660,
-    "y": 1200,
+    "x": 1920,
+    "y": 1060,
     "wires": [
       [],
       [
@@ -941,8 +941,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 1660,
-    "y": 1260,
+    "x": 1920,
+    "y": 1120,
     "wires": [
       [],
       [
@@ -987,8 +987,8 @@
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 1630,
-    "y": 1320,
+    "x": 1890,
+    "y": 1180,
     "wires": [
       [
         "65803c3e83084bfb"
@@ -1021,8 +1021,8 @@
     "blockInputOverrides": false,
     "domain": "media_player",
     "service": "turn_off",
-    "x": 2060,
-    "y": 1320,
+    "x": 2320,
+    "y": 1180,
     "wires": [
       []
     ]
@@ -1055,8 +1055,8 @@
     "outputLocationType": "msg",
     "outputLocation": "payload",
     "outputResultsCount": 1,
-    "x": 1140,
-    "y": 1420,
+    "x": 1400,
+    "y": 1280,
     "wires": [
       [
         "84b5588d7b324c46"
@@ -1078,8 +1078,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 1380,
-    "y": 1420,
+    "x": 1640,
+    "y": 1280,
     "wires": [
       [
         "926d4968ec3c4daf",
@@ -1096,8 +1096,8 @@
     "links": [
       "bf2ecb14abb5b08c"
     ],
-    "x": 1505,
-    "y": 1420,
+    "x": 1765,
+    "y": 1280,
     "wires": []
   },
   {
@@ -1187,7 +1187,7 @@
     "domain": "light",
     "service": "turn_off",
     "x": 570,
-    "y": 700,
+    "y": 880,
     "wires": [
       []
     ]
@@ -1274,7 +1274,7 @@
       }
     ],
     "x": 290,
-    "y": 1780,
+    "y": 1480,
     "wires": [
       [
         "e41825b911084637"
@@ -1302,7 +1302,7 @@
     "to": "",
     "reg": false,
     "x": 540,
-    "y": 1780,
+    "y": 1480,
     "wires": [
       [
         "b92ee413ec544a3a"
@@ -1322,7 +1322,7 @@
     "property": "payload",
     "topi": "topic",
     "x": 720,
-    "y": 1780,
+    "y": 1480,
     "wires": [
       [
         "607f071b34f84c1b"
@@ -1348,7 +1348,7 @@
     "repair": false,
     "outputs": 2,
     "x": 900,
-    "y": 1780,
+    "y": 1480,
     "wires": [
       [
         "37644bad9ba64178"
@@ -1395,7 +1395,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 1080,
-    "y": 1760,
+    "y": 1460,
     "wires": [
       [],
       [
@@ -1429,7 +1429,7 @@
     "domain": "input_boolean",
     "service": "turn_on",
     "x": 1260,
-    "y": 1760,
+    "y": 1460,
     "wires": [
       []
     ]
@@ -1471,7 +1471,7 @@
     "entity_location": "data",
     "override_data": "msg",
     "x": 1080,
-    "y": 1820,
+    "y": 1520,
     "wires": [
       [
         "cc642849d25f458a"
@@ -1505,7 +1505,7 @@
     "domain": "input_boolean",
     "service": "turn_on",
     "x": 1260,
-    "y": 1820,
+    "y": 1520,
     "wires": [
       []
     ]
@@ -1566,8 +1566,8 @@
     "blockInputOverrides": false,
     "domain": "switch",
     "service": "turn_off",
-    "x": 1140,
-    "y": 1520,
+    "x": 1400,
+    "y": 1380,
     "wires": [
       []
     ]
@@ -1620,7 +1620,7 @@
     "sat": true,
     "sun": true,
     "x": 390,
-    "y": 1580,
+    "y": 1800,
     "wires": [
       [
         "fc5fced1ce8e4d6a"
@@ -1653,7 +1653,7 @@
     "domain": "input_boolean",
     "service": "turn_on",
     "x": 720,
-    "y": 1580,
+    "y": 1800,
     "wires": [
       []
     ]
@@ -1706,7 +1706,7 @@
     "sat": true,
     "sun": true,
     "x": 370,
-    "y": 1640,
+    "y": 1860,
     "wires": [
       [
         "64dbfba628044b2a"
@@ -1739,7 +1739,7 @@
     "domain": "switch",
     "service": "turn_off",
     "x": 700,
-    "y": 1640,
+    "y": 1860,
     "wires": [
       [
         "898b4db92de445b6"
@@ -1772,7 +1772,7 @@
     "domain": "input_boolean",
     "service": "turn_off",
     "x": 910,
-    "y": 1640,
+    "y": 1860,
     "wires": [
       []
     ]
@@ -1786,8 +1786,8 @@
     "links": [
       "c52b53db395ec51c"
     ],
-    "x": 1640,
-    "y": 205,
+    "x": 1335,
+    "y": 220,
     "wires": []
   },
   {
@@ -1799,8 +1799,8 @@
     "links": [
       "2be6aa864ae84ada"
     ],
-    "x": 1640,
-    "y": 255,
+    "x": 1335,
+    "y": 270,
     "wires": []
   },
   {
@@ -1812,8 +1812,8 @@
     "links": [
       "c52b53db395ec51c"
     ],
-    "x": 1640,
-    "y": 305,
+    "x": 1335,
+    "y": 320,
     "wires": []
   },
   {
@@ -1825,8 +1825,8 @@
     "links": [
       "cf289ec39df609e3"
     ],
-    "x": 1640,
-    "y": 355,
+    "x": 1335,
+    "y": 370,
     "wires": []
   },
   {
@@ -1838,8 +1838,8 @@
     "links": [
       "c52b53db395ec51c"
     ],
-    "x": 1640,
-    "y": 405,
+    "x": 1335,
+    "y": 420,
     "wires": []
   },
   {
@@ -1849,7 +1849,7 @@
     "name": "TRIGGER + SCENE ENGINE (data-driven table)",
     "info": "",
     "x": 380,
-    "y": 540,
+    "y": 220,
     "wires": []
   },
   {
@@ -1858,8 +1858,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "ON dispatch — exclusions are per-case wires (xmas wires none)",
     "info": "",
-    "x": 790,
-    "y": 460,
+    "x": 890,
+    "y": 220,
     "wires": []
   },
   {
@@ -1868,8 +1868,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "OFF dispatch — teardown only for TV/music scenes",
     "info": "",
-    "x": 1250,
-    "y": 1200,
+    "x": 1510,
+    "y": 1060,
     "wires": []
   },
   {
@@ -1883,43 +1883,13 @@
     "wires": []
   },
   {
-    "id": "fb9662d1257946bd",
-    "type": "comment",
-    "z": "34c4d0d41a834ca6",
-    "name": "TV Bring-up subflow instances (env-parameterised)",
-    "info": "",
-    "x": 1230,
-    "y": 240,
-    "wires": []
-  },
-  {
-    "id": "45ed87c984da4a7b",
-    "type": "comment",
-    "z": "34c4d0d41a834ca6",
-    "name": "REVIEW nodes — dead link-outs preserved from live",
-    "info": "",
-    "x": 1650,
-    "y": 160,
-    "wires": []
-  },
-  {
     "id": "3b8c5bf3783449b9",
     "type": "comment",
     "z": "34c4d0d41a834ca6",
     "name": "Music / Spotify (per-user via pressed-by context)",
     "info": "",
-    "x": 2140,
+    "x": 1860,
     "y": 420,
-    "wires": []
-  },
-  {
-    "id": "55d73ead4cc24eb7",
-    "type": "comment",
-    "z": "34c4d0d41a834ca6",
-    "name": "Teardown: last TV scene off -> flag off + 2s delay -> TV off",
-    "info": "",
-    "x": 1750,
-    "y": 1140,
     "wires": []
   },
   {
@@ -1928,8 +1898,8 @@
     "z": "34c4d0d41a834ca6",
     "name": "None-on check (entity list FIXED vs live)",
     "info": "",
-    "x": 1210,
-    "y": 1380,
+    "x": 1470,
+    "y": 1240,
     "wires": []
   },
   {
@@ -1949,7 +1919,7 @@
     "name": "Green plug auto-scene (cloned unchanged)",
     "info": "",
     "x": 360,
-    "y": 1740,
+    "y": 1440,
     "wires": []
   },
   {
@@ -1959,17 +1929,266 @@
     "name": "Xmas — standalone scene; timers SUSPENDED until December",
     "info": "",
     "x": 430,
-    "y": 1520,
+    "y": 1740,
     "wires": []
   },
   {
-    "id": "72ad3ab005ac738c",
+    "id": "21d2f382e2cfaa9c",
+    "type": "api-call-service",
+    "z": "34c4d0d41a834ca6",
+    "name": "Turn of Shield",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "media_player.turn_off",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "media_player.android_tv_10_0_0_26"
+    ],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "media_player",
+    "service": "turn_off",
+    "x": 1740,
+    "y": 520,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "10dc3a4b19034059",
+    "type": "api-call-service",
+    "z": "34c4d0d41a834ca6",
+    "name": "Switch Spotify",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "input_select.select_option",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_select.sound_mode"
+    ],
+    "labelId": [],
+    "data": "{\"option\":\"Spotify\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "input_select",
+    "service": "select_option",
+    "x": 2320,
+    "y": 460,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "101c06972a329874",
+    "type": "api-call-service",
+    "z": "34c4d0d41a834ca6",
+    "name": "Turn off Shield",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "media_player.turn_off",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "media_player.android_tv_10_0_0_26"
+    ],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "media_player",
+    "service": "turn_off",
+    "x": 2300,
+    "y": 1120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f9c4afe9cbbc4f43",
+    "type": "api-call-service",
+    "z": "34c4d0d41a834ca6",
+    "name": "Flag tv off",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "input_boolean.turn_off",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_boolean.tv_auto_on"
+    ],
+    "labelId": [],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "input_boolean",
+    "service": "turn_off",
+    "x": 2280,
+    "y": 1060,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8fc3ebc0334faa35",
     "type": "comment",
     "z": "34c4d0d41a834ca6",
-    "name": "TV Polling",
+    "name": "light dimming when playing",
     "info": "",
-    "x": 260,
-    "y": 180,
+    "x": 310,
+    "y": 1580,
+    "wires": []
+  },
+  {
+    "id": "4f519255779bbd38",
+    "type": "server-state-changed",
+    "z": "34c4d0d41a834ca6",
+    "name": "Shield Playing",
+    "server": "178754b9.fedf4b",
+    "version": 6,
+    "outputs": 2,
+    "exposeAsEntityConfig": "",
+    "entities": {
+      "entity": [
+        "media_player.android_tv_10_0_0_26"
+      ],
+      "substring": [],
+      "regex": []
+    },
+    "outputInitially": false,
+    "stateType": "str",
+    "ifState": "playing",
+    "ifStateType": "str",
+    "ifStateOperator": "is",
+    "outputOnlyOnStateChange": true,
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "string",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 450,
+    "y": 1620,
+    "wires": [
+      [
+        "08e62901fe408d6a"
+      ],
+      [
+        "9500d742333e374b"
+      ]
+    ]
+  },
+  {
+    "id": "08e62901fe408d6a",
+    "type": "api-call-service",
+    "z": "34c4d0d41a834ca6",
+    "name": "Turn off Lounge Light ",
+    "server": "178754b9.fedf4b",
+    "version": 7,
+    "debugenabled": false,
+    "action": "light.turn_on",
+    "floorId": [],
+    "areaId": [],
+    "deviceId": [
+      "5b8d41b06281b7c03b4f07ee89fc0965"
+    ],
+    "entityId": [],
+    "labelId": [],
+    "data": "{\"entity_id\":\"light.lounge_light\",\"brightness_pct\":0,\"transition\":5}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "blockInputOverrides": false,
+    "domain": "light",
+    "service": "turn_on",
+    "x": 820,
+    "y": 1600,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "abcc685f4c6eed22",
+    "type": "comment",
+    "z": "34c4d0d41a834ca6",
+    "name": "Light Off",
+    "info": "",
+    "x": 1000,
+    "y": 1600,
+    "wires": []
+  },
+  {
+    "id": "9500d742333e374b",
+    "type": "link out",
+    "z": "34c4d0d41a834ca6",
+    "name": "Lights Low",
+    "mode": "link",
+    "links": [
+      "733ebaa1883876cb"
+    ],
+    "x": 735,
+    "y": 1660,
+    "wires": []
+  },
+  {
+    "id": "61b6c9e57e11aad6",
+    "type": "comment",
+    "z": "34c4d0d41a834ca6",
+    "name": "Light Low",
+    "info": "",
+    "x": 820,
+    "y": 1660,
     "wires": []
   },
   {
@@ -2012,740 +2231,9 @@
       }
     ],
     "x": 280,
-    "y": 240,
+    "y": 1620,
     "wires": [
       []
     ]
-  },
-  {
-    "id": "4e02a9c8b5515bec",
-    "type": "server-state-changed",
-    "z": "34c4d0d41a834ca6",
-    "name": "Kodi Playing",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "media_player.emby_kodi_10_0_0_26_4"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "playing",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 270,
-    "y": 1960,
-    "wires": [
-      [
-        "f350f80f429d31ba"
-      ],
-      [
-        "b4354c51b4d0fc8b"
-      ]
-    ]
-  },
-  {
-    "id": "2bddc3497df96ce9",
-    "type": "server-state-changed",
-    "z": "34c4d0d41a834ca6",
-    "name": "Shield Playing",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "media_player.android_tv_10_0_0_26"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "playing",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 270,
-    "y": 2100,
-    "wires": [
-      [
-        "b1e3f1a6854508ac"
-      ],
-      [
-        "d61d978693e10be3"
-      ]
-    ]
-  },
-  {
-    "id": "036d50499324cef3",
-    "type": "api-current-state",
-    "z": "34c4d0d41a834ca6",
-    "name": "Kdi Playing?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "playing",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "media_player.android_tv_10_0_0_26",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 789.4513854980469,
-    "y": 2034,
-    "wires": [
-      [
-        "53304d10e73de0ac"
-      ],
-      [
-        "b423aa41ba30fd52"
-      ]
-    ]
-  },
-  {
-    "id": "b423aa41ba30fd52",
-    "type": "api-current-state",
-    "z": "34c4d0d41a834ca6",
-    "name": "Netflix?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "Netflix",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "sensor.shield_source",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 979.4513854980469,
-    "y": 2054,
-    "wires": [
-      [
-        "53304d10e73de0ac"
-      ],
-      [
-        "ae6cf53f3e1302a3"
-      ]
-    ]
-  },
-  {
-    "id": "75ebfc6e6db0c9f1",
-    "type": "api-current-state",
-    "z": "34c4d0d41a834ca6",
-    "name": "Netflix?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "Netflix",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "sensor.shield_source",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 779.4513854980469,
-    "y": 1974,
-    "wires": [
-      [
-        "53304d10e73de0ac"
-      ],
-      [
-        "2b26571c7560a921"
-      ]
-    ]
-  },
-  {
-    "id": "53304d10e73de0ac",
-    "type": "api-call-service",
-    "z": "34c4d0d41a834ca6",
-    "name": "Turn off Lounge Light ",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "light.turn_on",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [
-      "5b8d41b06281b7c03b4f07ee89fc0965"
-    ],
-    "entityId": [],
-    "labelId": [],
-    "data": "{\"entity_id\":\"light.lounge_light\",\"brightness_pct\":0,\"transition\":5}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "light",
-    "service": "turn_on",
-    "x": 1260,
-    "y": 1934,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "2b26571c7560a921",
-    "type": "link out",
-    "z": "34c4d0d41a834ca6",
-    "name": "Lights Low",
-    "mode": "link",
-    "links": [
-      "733ebaa1883876cb"
-    ],
-    "x": 1175,
-    "y": 2000,
-    "wires": []
-  },
-  {
-    "id": "ae6cf53f3e1302a3",
-    "type": "link out",
-    "z": "34c4d0d41a834ca6",
-    "name": "Lights Low",
-    "mode": "link",
-    "links": [
-      "733ebaa1883876cb"
-    ],
-    "x": 1175,
-    "y": 2054,
-    "wires": []
-  },
-  {
-    "id": "89f51606b885553f",
-    "type": "comment",
-    "z": "34c4d0d41a834ca6",
-    "name": "Light Low",
-    "info": "",
-    "x": 1260,
-    "y": 2054,
-    "wires": []
-  },
-  {
-    "id": "50878c91a9b799ab",
-    "type": "comment",
-    "z": "34c4d0d41a834ca6",
-    "name": "Light Low",
-    "info": "",
-    "x": 1260,
-    "y": 2000,
-    "wires": []
-  },
-  {
-    "id": "29f6bf23358ca1d7",
-    "type": "comment",
-    "z": "34c4d0d41a834ca6",
-    "name": "Movie Playing",
-    "info": "",
-    "x": 270,
-    "y": 1914,
-    "wires": []
-  },
-  {
-    "id": "bf113a7b2959a566",
-    "type": "comment",
-    "z": "34c4d0d41a834ca6",
-    "name": "Light Off",
-    "info": "",
-    "x": 1440,
-    "y": 1934,
-    "wires": []
-  },
-  {
-    "id": "f350f80f429d31ba",
-    "type": "api-current-state",
-    "z": "34c4d0d41a834ca6",
-    "name": "TV Being turned on?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.tv_auto_on",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 579.4513854980469,
-    "y": 1934,
-    "wires": [
-      [],
-      [
-        "53304d10e73de0ac"
-      ]
-    ]
-  },
-  {
-    "id": "b4354c51b4d0fc8b",
-    "type": "api-current-state",
-    "z": "34c4d0d41a834ca6",
-    "name": "TV Being turned on?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.tv_auto_on",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 579.4513854980469,
-    "y": 1994,
-    "wires": [
-      [],
-      [
-        "75ebfc6e6db0c9f1"
-      ]
-    ]
-  },
-  {
-    "id": "b1e3f1a6854508ac",
-    "type": "api-current-state",
-    "z": "34c4d0d41a834ca6",
-    "name": "TV Being turned on?",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.tv_auto_on",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 580,
-    "y": 2080,
-    "wires": [
-      [],
-      [
-        "036d50499324cef3"
-      ]
-    ]
-  },
-  {
-    "id": "be07a54ee25225a7",
-    "type": "server-state-changed",
-    "z": "34c4d0d41a834ca6",
-    "name": "Shield Playing",
-    "server": "178754b9.fedf4b",
-    "version": 6,
-    "outputs": 2,
-    "exposeAsEntityConfig": "",
-    "entities": {
-      "entity": [
-        "media_player.android_tv_10_0_0_26"
-      ],
-      "substring": [],
-      "regex": []
-    },
-    "outputInitially": false,
-    "stateType": "str",
-    "ifState": "idle",
-    "ifStateType": "str",
-    "ifStateOperator": "is",
-    "outputOnlyOnStateChange": true,
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 550,
-    "y": 2200,
-    "wires": [
-      [
-        "b423aa41ba30fd52"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "21d2f382e2cfaa9c",
-    "type": "api-call-service",
-    "z": "34c4d0d41a834ca6",
-    "name": "Turn of Shield",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "media_player.android_tv_10_0_0_26"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "turn_off",
-    "x": 2020,
-    "y": 520,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "10dc3a4b19034059",
-    "type": "api-call-service",
-    "z": "34c4d0d41a834ca6",
-    "name": "Switch Spotify",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_select.select_option",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_select.sound_mode"
-    ],
-    "labelId": [],
-    "data": "{\"option\":\"Spotify\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_select",
-    "service": "select_option",
-    "x": 2600,
-    "y": 460,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "101c06972a329874",
-    "type": "api-call-service",
-    "z": "34c4d0d41a834ca6",
-    "name": "Turn of Shield",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "media_player.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "media_player.android_tv_10_0_0_26"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "media_player",
-    "service": "turn_off",
-    "x": 2040,
-    "y": 1260,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "d61d978693e10be3",
-    "type": "api-current-state",
-    "z": "34c4d0d41a834ca6",
-    "name": "Shield Idle/Paused",
-    "server": "178754b9.fedf4b",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "idle,paused",
-    "halt_if_type": "str",
-    "halt_if_compare": "includes",
-    "entity_id": "media_player.android_tv_10_0_0_26",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "string",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 570,
-    "y": 2140,
-    "wires": [
-      [],
-      []
-    ]
-  },
-  {
-    "id": "f9c4afe9cbbc4f43",
-    "type": "api-call-service",
-    "z": "34c4d0d41a834ca6",
-    "name": "Flag tv off",
-    "server": "178754b9.fedf4b",
-    "version": 7,
-    "debugenabled": false,
-    "action": "input_boolean.turn_off",
-    "floorId": [],
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "input_boolean.tv_auto_on"
-    ],
-    "labelId": [],
-    "data": "",
-    "dataType": "jsonata",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "blockInputOverrides": false,
-    "domain": "input_boolean",
-    "service": "turn_off",
-    "x": 2020,
-    "y": 1200,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "8fc3ebc0334faa35",
-    "type": "comment",
-    "z": "34c4d0d41a834ca6",
-    "name": "shield: playing: idle",
-    "info": "",
-    "x": 290,
-    "y": 2320,
-    "wires": []
   }
 ]
